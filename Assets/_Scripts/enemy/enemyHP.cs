@@ -18,6 +18,11 @@ public class enemyHP : MonoBehaviour {
 		{
 			HP -= 25;
 		}
+		else if (other.gameObject.tag == "BulletSlow")
+		{
+			HP -= 15;
+			// Be slowed
+		}
 		Destroy (other.gameObject);
 		if(HP < 0) {
 			Destroy (gameObject);
