@@ -51,6 +51,11 @@ public class GroundObject : MonoBehaviour {
 					buildTurretThree();
 					ObjectBuilded = true;
 				}
+				if (Input.GetKeyUp (KeyCode.Alpha5)) 
+				{
+					buildTurretFour();
+					ObjectBuilded = true;
+				}
 			}
 		}
 	}
@@ -88,11 +93,16 @@ public class GroundObject : MonoBehaviour {
 
 	void buildTurretTwo()
 	{
-		Debug.Log ("3");
+		var go = Instantiate(turrets[1], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
 	}
 
 	void buildTurretThree()
 	{
-		Debug.Log ("4");
+		var go = Instantiate(turrets[2], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+	}
+
+	void buildTurretFour()
+	{
+		var go = Instantiate(turrets[3], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
 	}
 }
