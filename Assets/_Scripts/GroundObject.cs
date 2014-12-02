@@ -8,10 +8,9 @@ public class GroundObject : MonoBehaviour {
 	private bool BuildMode = false;
 
 	public Transform Wall;
-	public Transform turretOne;
-	public Transform turretTwo;
-	public Transform turretThree;
+	public Transform[] turrets;
 
+	public Material ground;
 
 	void Update()
 	{
@@ -68,7 +67,7 @@ public class GroundObject : MonoBehaviour {
 	void OnMouseExit()
 	{
 		// turn the things of on mouse enter off
-		renderer.material.color = Color.white;
+		renderer.material = ground;
 
 		_Onhover = false;
 	}	
@@ -83,7 +82,8 @@ public class GroundObject : MonoBehaviour {
 
 	void buildTurretOne()
 	{
-		Debug.Log ("2");
+		var go = Instantiate(turrets[0], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+
 	}
 
 	void buildTurretTwo()
