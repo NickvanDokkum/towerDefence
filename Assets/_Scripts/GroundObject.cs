@@ -25,7 +25,7 @@ public class GroundObject : MonoBehaviour {
 
 		if (_Onhover) 
 		{
-			if (ObjectBuilded == false) 
+			if (ObjectBuilded == false && BuildMode == true) 
 			{
 				//start de functies om het gewenste object neer te zetten op de door jou gekoze locatie
 				if (Input.GetKeyUp (KeyCode.Alpha1)) 
