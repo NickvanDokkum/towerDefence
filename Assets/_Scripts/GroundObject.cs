@@ -55,7 +55,7 @@ public class GroundObject : MonoBehaviour {
 	//checkt of de muis op een plane staat en maakt de acties die hierbij horen mogelijk
 	void OnMouseEnter()
 	{
-		if (GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode) 
+		if (GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode)
 			renderer.material.color = Color.blue;
 
 		_Onhover = true;

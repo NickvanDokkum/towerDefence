@@ -40,10 +40,10 @@ public class WallHost : MonoBehaviour {
 				Debug.Log("test2");
 				if(currentWallLevel < walls.Length)
 				{
-					removeOldChild();
-
 					if(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode)
 					{
+						removeOldChild();
+
 						currentWallLevel++;
 						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,10f,transform.position.z), transform.rotation);
 						trans.parent = transform;
