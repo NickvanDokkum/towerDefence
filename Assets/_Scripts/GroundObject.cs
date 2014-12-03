@@ -5,8 +5,7 @@ public class GroundObject : MonoBehaviour {
 
 	private bool _Onhover = false;
 	private bool ObjectBuilded = false;
-	private bool BuildMode = false;
-
+	
 	public Transform Wall;
 	public Transform[] turrets;
 
@@ -14,18 +13,9 @@ public class GroundObject : MonoBehaviour {
 
 	void Update()
 	{
-		//wissel van build mode
-		if(Input.GetKeyUp(KeyCode.Space))
+		if (_Onhover && ObjectBuilded == false) 
 		{
-			if (BuildMode) 
-				BuildMode = false;
-			else
-				BuildMode = true;
-		}
-
-		if (_Onhover) 
-		{
-			if (ObjectBuilded == false && BuildMode == true) 
+			if (GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode) 
 			{
 				//start de functies om het gewenste object neer te zetten op de door jou gekoze locatie
 				if (Input.GetKeyUp (KeyCode.Alpha1)) 
@@ -61,9 +51,10 @@ public class GroundObject : MonoBehaviour {
 	}
 
 
+	//checkt of de muis op een plane staat en maakt de acties die hierbij horen mogelijk
 	void OnMouseEnter()
 	{
-		if (BuildMode) 
+		if (GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode) 
 			renderer.material.color = Color.blue;
 
 		_Onhover = true;

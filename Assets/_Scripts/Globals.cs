@@ -4,4 +4,5 @@ using System.Collections;
 public class Globals : MonoBehaviour {
 
 	public static bool focusTank = false;
+	public static bool roundActive = false;
 }
