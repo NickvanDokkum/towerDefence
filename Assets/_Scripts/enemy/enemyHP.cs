@@ -23,9 +23,11 @@ public class enemyHP : MonoBehaviour {
 			HP -= 15;
 			// Be slowed
 		}
-		Destroy (other.gameObject);
-		if(HP < 0) {
+		if(HP <= 0) {
 			Destroy (gameObject);
+			Destroy(this);
+			TurretScript.singleton.redEnemyList.Remove(this.transform);
+			TurretScript.singleton.blueEnemyList.Remove(this.transform);
 		}
 	}
 }
