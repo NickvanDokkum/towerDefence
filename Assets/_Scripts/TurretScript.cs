@@ -8,6 +8,7 @@ public class TurretScript : MonoBehaviour {
 	
 	public GameObject myProjectile;
 	public float reloadTime = 0.1f;
+	public float reloadTimeReset = 1;
 	public Transform spawnPos;
 	
 	public Transform myTarget = null;
@@ -34,11 +35,29 @@ public class TurretScript : MonoBehaviour {
 		if(Globals.focusTank){
 			if(blueEnemyList.Count > 0)
 			{
-				myTarget = blueEnemyList[0].transform;
+				if(blueEnemyList[0] == null)
+				{
+					blueEnemyList.Remove (blueEnemyList[0]);
+				}
+				if(blueEnemyList.Count > 0){
+					myTarget = blueEnemyList[0].transform;
+				}
+				else {
+					myTarget = null;
+				}
 			}
 			else if(redEnemyList.Count > 0)
 			{
-				myTarget = redEnemyList[0].transform;
+				if(redEnemyList[0] == null)
+				{
+					redEnemyList.Remove (redEnemyList[0]);
+				}
+				if(redEnemyList.Count > 0){
+					myTarget = redEnemyList[0].transform;
+				}
+				else {
+					myTarget = null;
+				}
 			}
 			else
 			{
@@ -48,11 +67,29 @@ public class TurretScript : MonoBehaviour {
 		else {
 			if(redEnemyList.Count > 0)
 			{
-				myTarget = redEnemyList[0].transform;
+				if(redEnemyList[0] == null)
+				{
+					redEnemyList.Remove (redEnemyList[0]);
+				}
+				if(redEnemyList.Count > 0){
+					myTarget = redEnemyList[0].transform;
+				}
+				else {
+					myTarget = null;
+				}
 			}
 			else if(blueEnemyList.Count > 0)
 			{
-				myTarget = blueEnemyList[0].transform;
+				if(blueEnemyList[0] == null)
+				{
+					blueEnemyList.Remove (blueEnemyList[0]);
+				}
+				if(blueEnemyList.Count > 0){
+					myTarget = blueEnemyList[0].transform;
+				}
+				else {
+					myTarget = null;
+				}
 			}
 			else
 			{
@@ -67,14 +104,18 @@ public class TurretScript : MonoBehaviour {
 			if(reloadTime == 0 || reloadTime < 0)
 			{
 				FireProjectile (); 
-				reloadTime = 1;
+				reloadTime = reloadTimeReset;
 			}
 			else
 			{
 				reloadTime -= Time.deltaTime;
 			}
 		}
-		
+
+		if (Globals.roundActive == false && collider.enabled == true) 
+			collider.enabled = false;
+		else if(Globals.roundActive == true && collider.enabled == false) 
+			collider.enabled = true;
 	}
 	
 	void OnTriggerEnter(Collider other){

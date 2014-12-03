@@ -21,13 +21,10 @@ public class enemyHP : MonoBehaviour {
 		else if (other.gameObject.tag == "BulletSlow")
 		{
 			HP -= 15;
-			// Be slowed
 		}
 		if(HP <= 0) {
 			Destroy (gameObject);
 			Destroy(this);
-			TurretScript.singleton.redEnemyList.Remove(this.transform);
-			TurretScript.singleton.blueEnemyList.Remove(this.transform);
 		}
 	}
 }
