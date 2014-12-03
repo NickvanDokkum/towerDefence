@@ -15,8 +15,9 @@ public class GroundObject : MonoBehaviour {
 	{
 		if (_Onhover && ObjectBuilded == false) 
 		{
-			if (GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode) 
+			if(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode)
 			{
+				Debug.Log(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode);
 				//start de functies om het gewenste object neer te zetten op de door jou gekoze locatie
 				if (Input.GetKeyUp (KeyCode.Alpha1)) 
 				{

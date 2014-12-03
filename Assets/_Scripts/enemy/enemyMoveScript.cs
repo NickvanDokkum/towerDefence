@@ -11,7 +11,9 @@ public class enemyMoveScript : MonoBehaviour {
 	private GameObject target;
 
 	void Start () {
-		target = Globals.end;
+		if(target == null) {
+			target = Globals.end;
+		}
 		agent = GetComponent<NavMeshAgent> ();
 		agent.SetDestination (target.transform.position);
 	}

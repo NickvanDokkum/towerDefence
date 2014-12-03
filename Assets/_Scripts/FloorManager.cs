@@ -26,6 +26,7 @@ public class FloorManager : MonoBehaviour {
 		//zet de build mode aan of uit(voor alle scripts)
 		if(Input.GetKeyUp(KeyCode.Space))
 		{
+			Debug.Log(BuildMode);
 			if (BuildMode) 
 				BuildMode = false;
 			else
