@@ -16,7 +16,8 @@ public class FloorManager : MonoBehaviour {
 		{
 			for(int j = 0; j < rows; j++)
 			{
-				var go = Instantiate(Floor, new Vector3(i*10f, 0,j*10f), transform.rotation);
+				Transform trans = (Transform)Instantiate(Floor, new Vector3(i*10f, 0,j*10f), transform.rotation);
+				trans.parent = transform;
 			}
 		}
 	}

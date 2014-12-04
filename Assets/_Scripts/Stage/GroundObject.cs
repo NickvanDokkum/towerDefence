@@ -6,8 +6,10 @@ public class GroundObject : MonoBehaviour {
 	private bool _Onhover = false;
 	private bool ObjectBuilded = false;
 	
-	public Transform Wall;
-	public Transform[] turrets;
+	//public Transform Wall;
+	//public Transform[] turrets;
+	public Transform[] buildAbleObjects;
+	private int objectNumber;
 
 	public Material ground;
 
@@ -21,30 +23,35 @@ public class GroundObject : MonoBehaviour {
 				//start de functies om het gewenste object neer te zetten op de door jou gekoze locatie
 				if (Input.GetKeyUp (KeyCode.Alpha1)) 
 				{
-					buildWall();
+					objectNumber = 0;
+					placeObjectToBuild();
 					ObjectBuilded = true;
 				}
 				
 				if (Input.GetKeyUp (KeyCode.Alpha2)) 
 				{
-					buildTurretOne();
+					objectNumber = 1;
+					placeObjectToBuild();
 					ObjectBuilded = true;
 				}
 				
 				if (Input.GetKeyUp (KeyCode.Alpha3)) 
 				{
-					buildTurretTwo();
+					objectNumber = 2;
+					placeObjectToBuild();
 					ObjectBuilded = true;
 				}
 				
 				if (Input.GetKeyUp (KeyCode.Alpha4)) 
 				{
-					buildTurretThree();
+					objectNumber = 3;
+					placeObjectToBuild();
 					ObjectBuilded = true;
 				}
 				if (Input.GetKeyUp (KeyCode.Alpha5)) 
 				{
-					buildTurretFour();
+					objectNumber = 4;
+					placeObjectToBuild();
 					ObjectBuilded = true;
 				}
 			}
@@ -71,30 +78,11 @@ public class GroundObject : MonoBehaviour {
 
 
 
-	// Functies voor het plaatsen van de objecten
-	void buildWall()
-	{
-		var go = Instantiate(Wall, new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
-	}
+	// Functie voor het plaatsen van de objecten
 
-	void buildTurretOne()
+	void placeObjectToBuild()
 	{
-		var go = Instantiate(turrets[0], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
-
-	}
-
-	void buildTurretTwo()
-	{
-		var go = Instantiate(turrets[1], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
-	}
-
-	void buildTurretThree()
-	{
-		var go = Instantiate(turrets[2], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
-	}
-
-	void buildTurretFour()
-	{
-		var go = Instantiate(turrets[3], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+		trans.parent = transform;
 	}
 }
