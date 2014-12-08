@@ -3,7 +3,7 @@ using System.Collections;
 
 public class enemyHP : MonoBehaviour {
 
-	private int HP = 100;
+	public int HP = 100;
 	
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "BulletDamage")

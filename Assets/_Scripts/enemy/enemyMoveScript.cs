@@ -5,6 +5,7 @@ public class enemyMoveScript : MonoBehaviour {
 
 	private float timer = 3;
 	private bool slowed = false;
+	public int slowSpeed = 3;
 
 	private NavMeshAgent agent;
 	[SerializeField]
@@ -23,7 +24,7 @@ public class enemyMoveScript : MonoBehaviour {
 		}
 	}
 	void Slow () {
-		agent.speed = 3;
+		agent.speed = slowSpeed;
 		timer = 3;
 		slowed = true;
 	}
