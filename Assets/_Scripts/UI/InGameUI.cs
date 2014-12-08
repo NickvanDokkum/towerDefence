@@ -21,6 +21,7 @@ public class InGameUI : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.Label (new Rect (100, 50, 200, 50), "You have currently: " + Globals.Gold + " Gold");
+		GUI.Label (new Rect (100, 75, 200, 50), "your current score: " + Globals.Score);
 		UpgradePopUp = GUI.Window (0, UpgradePopUp, UpgradeMenuFunction, "Upgrades");
 	}
 	

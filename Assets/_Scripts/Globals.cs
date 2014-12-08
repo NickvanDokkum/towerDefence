@@ -9,4 +9,5 @@ public class Globals : MonoBehaviour {
 	public static int Gold = 300;
 	public static int waveNumber;
 	public static bool paused = false;
+	public static int Score;
 }
