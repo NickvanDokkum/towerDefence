@@ -7,16 +7,17 @@ public class FloorManager : MonoBehaviour {
 	private int lines = 25;
 	public Transform Floor;
 	public bool BuildMode = false;
-
+	
 	// Use this for initialization
 	void Awake () 
 	{
+		Globals.Gold = 300;
 		//maakt een veld aan van het aantal rows x het aantal lines
 		for(int i = 0;i < lines; i++)
 		{
 			for(int j = 0; j < rows; j++)
 			{
-				Transform trans = (Transform)Instantiate(Floor, new Vector3(i*10f, 0,j*10f), transform.rotation);
+				Transform trans = (Transform)Instantiate(Floor, new Vector3(i*10f, -0.5f,j*10f), transform.rotation);
 				trans.parent = transform;
 			}
 		}

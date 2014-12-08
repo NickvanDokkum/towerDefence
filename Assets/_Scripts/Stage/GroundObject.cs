@@ -10,8 +10,8 @@ public class GroundObject : MonoBehaviour {
 	//public Transform[] turrets;
 	public Transform[] buildAbleObjects;
 	private int objectNumber;
-
 	public Material ground;
+	
 
 	void Update()
 	{
@@ -21,38 +21,43 @@ public class GroundObject : MonoBehaviour {
 			{
 				Debug.Log(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode);
 				//start de functies om het gewenste object neer te zetten op de door jou gekoze locatie
-				if (Input.GetKeyUp (KeyCode.Alpha1)) 
+				if (Input.GetKeyUp (KeyCode.Alpha1) && Globals.Gold >= 10) 
 				{
 					objectNumber = 0;
 					placeObjectToBuild();
 					ObjectBuilded = true;
+					Globals.Gold -= 10;
 				}
 				
-				if (Input.GetKeyUp (KeyCode.Alpha2)) 
+				if (Input.GetKeyUp (KeyCode.Alpha2) && Globals.Gold >= 25) 
 				{
 					objectNumber = 1;
 					placeObjectToBuild();
 					ObjectBuilded = true;
+					Globals.Gold -= 25;
 				}
 				
-				if (Input.GetKeyUp (KeyCode.Alpha3)) 
+				if (Input.GetKeyUp (KeyCode.Alpha3) && Globals.Gold >= 30) 
 				{
 					objectNumber = 2;
 					placeObjectToBuild();
 					ObjectBuilded = true;
+					Globals.Gold -= 30;
 				}
 				
-				if (Input.GetKeyUp (KeyCode.Alpha4)) 
+				if (Input.GetKeyUp (KeyCode.Alpha4) && Globals.Gold >= 50) 
 				{
 					objectNumber = 3;
 					placeObjectToBuild();
 					ObjectBuilded = true;
+					Globals.Gold -= 50;
 				}
-				if (Input.GetKeyUp (KeyCode.Alpha5)) 
+				if (Input.GetKeyUp (KeyCode.Alpha5) && Globals.Gold >= 40) 
 				{
 					objectNumber = 4;
 					placeObjectToBuild();
 					ObjectBuilded = true;
+					Globals.Gold -= 40;
 				}
 			}
 		}
@@ -82,7 +87,8 @@ public class GroundObject : MonoBehaviour {
 
 	void placeObjectToBuild()
 	{
-		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+		Debug.Log (Globals.Gold);
+		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
 		trans.parent = transform;
 	}
 }

@@ -23,6 +23,7 @@ public class enemyHP : MonoBehaviour {
 			HP -= 15;
 		}
 		if(HP <= 0) {
+			Globals.Gold += 9 + Globals.waveNumber;
 			Destroy (gameObject);
 			Destroy(this);
 		}

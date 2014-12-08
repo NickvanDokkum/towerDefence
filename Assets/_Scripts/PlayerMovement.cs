@@ -11,21 +11,27 @@ public class PlayerMovement : MonoBehaviour {
 	private float verticalRotation = 0;
 	private float upDownRange = 60.0f;
 
+
+
 	void Update() 
 	{
-		if (Input.GetKey(KeyCode.Escape) && Screen.lockCursor == true)
+
+		if (Input.GetKey(KeyCode.Escape) && Screen.lockCursor == true || Globals.paused)
 			Screen.lockCursor = false;
-		else
+		else if (!Globals.paused)
 			Screen.lockCursor = true;
 
-
+		print (Globals.paused);
+		if(!Globals.paused)
+		{
 		float rotHorizontal = Input.GetAxis ("Mouse X") * mouseSensivity;
 		transform.Rotate (0, rotHorizontal, 0);
 		
 		verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensivity;
 		verticalRotation = Mathf.Clamp (verticalRotation, -upDownRange, upDownRange);
-		
+
 		Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0, 0);
+		}
 
 
 
