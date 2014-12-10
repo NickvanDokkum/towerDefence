@@ -17,7 +17,6 @@ public class EnemySpawnScript : MonoBehaviour {
 		if(Globals.roundActive == true) {
 			if (spawnTimer < 0){
 				enemyNum = Random.Range(0, 2);
-				Debug.Log (enemyNum);
 				if(enemyNum == 1){
 					Instantiate (EnemyFast, this.transform.position, this.transform.rotation);
 				}

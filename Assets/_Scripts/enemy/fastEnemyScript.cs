@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemyMoveScript : MonoBehaviour {
+public class fastEnemyScript : MonoBehaviour {
 
 	private float timer = 3;
 	private bool slowed = false;
-	public int slowSpeed = 3;
+	public float slowSpeed = 2.5f;
 
 	private NavMeshAgent agent;
 	[SerializeField]
@@ -16,7 +16,9 @@ public class enemyMoveScript : MonoBehaviour {
 			target = Globals.end;
 		}
 		agent = GetComponent<NavMeshAgent> ();
-		agent.SetDestination (target.transform.position);
+		if(target != null){
+			agent.SetDestination (target.transform.position);
+		}
 	}
 	void OnTriggerEnter(Collider other){
 		if(other.collider.tag == "BulletSlow"){
@@ -29,6 +31,12 @@ public class enemyMoveScript : MonoBehaviour {
 		slowed = true;
 	}
 	void Update () {
+		if(target == null) {
+			target = Globals.end;
+			if(target != null){
+				agent.SetDestination (target.transform.position);
+			}
+		}
 		if(slowed == true){
 			if(timer <= 0){
 				agent.speed = 5;

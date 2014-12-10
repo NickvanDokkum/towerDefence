@@ -112,10 +112,10 @@ public class TurretScript : MonoBehaviour {
 			}
 		}
 
-		if (Globals.roundActive == false && collider.enabled == true) 
+		/*if (Globals.roundActive == false && collider.enabled == true) 
 			collider.enabled = false;
 		else if(Globals.roundActive == true && collider.enabled == false) 
-			collider.enabled = true;
+			collider.enabled = true;*/
 	}
 	
 	void OnTriggerEnter(Collider other){
