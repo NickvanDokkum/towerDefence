@@ -11,10 +11,17 @@ public class PlayerMovement : MonoBehaviour {
 	private float verticalRotation = 0;
 	private float upDownRange = 60.0f;
 
+	private float jumpSpeed = 360;
+	private bool isJumping;
 
 
 	void Update() 
 	{
+		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false) 
+		{
+			rigidbody.AddForce(Vector3.up * jumpSpeed * 10);
+			isJumping = true;
+		}
 
 		if (Input.GetKey(KeyCode.Escape) && Screen.lockCursor == true || Globals.paused)
 			Screen.lockCursor = false;
@@ -46,5 +53,10 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		isJumping = false;
 	}
 }

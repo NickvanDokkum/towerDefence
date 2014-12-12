@@ -88,7 +88,7 @@ public class GroundObject : MonoBehaviour {
 	void placeObjectToBuild()
 	{
 		Debug.Log (Globals.Gold);
-		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
+		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0.5f,transform.position.z), transform.rotation);
 		trans.parent = transform;
 	}
 }

@@ -12,7 +12,8 @@ public class WallHost : MonoBehaviour {
 	void Start () 
 	{
 		//Hoe zet je dit object in een leeg game object?
-		Transform trans = (Transform)Instantiate(walls[0], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+		Transform trans = (Transform)Instantiate (walls [0], new Vector3 (transform.position.x, 0.55f, transform.position.z), Quaternion.Euler(270,0,0));//transform.rotation);
+		trans.localScale += new Vector3(2.76f,0,0);
 		trans.parent = transform;
 	}
 
@@ -20,6 +21,7 @@ public class WallHost : MonoBehaviour {
 	void OnMouseEnter()
 	{
 		_OnHover = true;
+		Debug.Log ("hover");
 	}
 
 	void OnMouseExit()
@@ -45,7 +47,8 @@ public class WallHost : MonoBehaviour {
 						removeOldChild();
 
 						currentWallLevel++;
-						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,10f,transform.position.z), transform.rotation);
+						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,1f,transform.position.z), Quaternion.Euler(270,0,0));
+						trans.localScale = new Vector3(1.6f,1,1);
 						trans.parent = transform;
 					}
 				}
