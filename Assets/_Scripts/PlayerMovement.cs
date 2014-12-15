@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	private float verticalRotation = 0;
 	private float upDownRange = 60.0f;
 
-	private float jumpSpeed = 360;
+	private float jumpSpeed = 160;
 	private bool isJumping;
 
 
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false) 
 		{
-			rigidbody.AddForce(Vector3.up * jumpSpeed * 10);
+			rigidbody.AddForce(Vector3.up * jumpSpeed * 2);
 			isJumping = true;
 		}
 
