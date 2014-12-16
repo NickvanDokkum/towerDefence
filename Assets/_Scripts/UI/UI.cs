@@ -20,7 +20,7 @@ public class UI : MonoBehaviour {
 				howToPlay = false;
 		}
 
-		GUI.Label (new Rect (400, 400, 100, 100), "HighScore: ");
+		GUI.Label (new Rect (400, 400, 100, 100), "HighScore: 15740");
 
 		if(howToPlay)
 		{

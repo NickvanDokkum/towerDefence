@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 		else if (!Globals.paused)
 			Screen.lockCursor = true;
 
-		print (Globals.paused);
+
 		if(!Globals.paused)
 		{
 		float rotHorizontal = Input.GetAxis ("Mouse X") * mouseSensivity;
@@ -58,5 +58,10 @@ public class PlayerMovement : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 		isJumping = false;
+
+		if(collider.gameObject.tag == "Gold")
+		{
+			Globals.Gold += 9 + Globals.waveNumber;
+		}
 	}
 }

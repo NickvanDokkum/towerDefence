@@ -28,6 +28,7 @@ public class DayNightCycle : MonoBehaviour
 
 	void Initialize()
 	{
+		currentCycleTime = 60;
 		quarterDay = dayCycleLength * 0.25f;
 		dawnTime = 0.0f;
 		dayTime = dawnTime + quarterDay;

@@ -17,9 +17,9 @@ public class GroundObject : MonoBehaviour {
 	{
 		if (_Onhover && ObjectBuilded == false) 
 		{
-			if(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode)
+			if(Globals.BuildMode)
 			{
-				Debug.Log(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode);
+				Debug.Log("Buildmode = " + Globals.BuildMode);
 				//start de functies om het gewenste object neer te zetten op de door jou gekoze locatie
 				if (Input.GetKeyUp (KeyCode.Alpha1) && Globals.Gold >= 10) 
 				{
@@ -67,7 +67,7 @@ public class GroundObject : MonoBehaviour {
 	//checkt of de muis op een plane staat en maakt de acties die hierbij horen mogelijk
 	void OnMouseEnter()
 	{
-		if (GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode)
+		if (Globals.BuildMode)
 			renderer.material.color = Color.blue;
 
 		_Onhover = true;
