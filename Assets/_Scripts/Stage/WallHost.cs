@@ -4,9 +4,10 @@ using System.Collections;
 public class WallHost : MonoBehaviour {
 
 	public Transform[] walls;
-
+	private int HP;
 	private bool _OnHover = false;
 	private int currentWallLevel = 0;
+	private int damages;
 
 	// Use this for initialization
 	void Start () 
@@ -47,8 +48,26 @@ public class WallHost : MonoBehaviour {
 						currentWallLevel++;
 						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,10f,transform.position.z), transform.rotation);
 						trans.parent = transform;
+						if(currentWallLevel == 1){
+							HP = 3;
+						}
+						else if (currentWallLevel == 2){
+							HP = 5;
+						}
+						else if (currentWallLevel == 3){
+							HP = 10;
+						}
 					}
 				}
+			}
+		}
+	}
+	void OnCollisionStay(Collision hit){
+		if(hit.gameObject.GetComponent<fastEnemyScript>().attack == true){
+			if(hit.gameObject.tag == "Enemy2"){
+				print(hit.gameObject.GetComponent<fastEnemyScript>());
+				damages = 1;
+				damaged();
 			}
 		}
 	}
@@ -58,5 +77,24 @@ public class WallHost : MonoBehaviour {
 		trans.transform.parent = null;
 
 		Destroy ((trans as Transform).gameObject);
+	}
+	void damaged(){
+		if(currentWallLevel != 0){
+			switch (damages)
+			{
+				case 1:
+					HP--;
+				break;
+				case 2:
+					HP-=2;
+				break;
+			}
+			if (HP < 0){
+				removeOldChild();
+				currentWallLevel = 0;
+
+			}
+			print(HP);
+		}
 	}
 }

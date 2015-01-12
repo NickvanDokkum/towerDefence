@@ -11,6 +11,8 @@ public class strongEnemyScript : MonoBehaviour {
 	public int moveSpeed = 4;
 	private bool attacking = false;
 	private int wallHP;
+	private float dist;
+	private bool targReach = false;
 
 	void Start () {
 		target = Globals.end;
@@ -18,36 +20,42 @@ public class strongEnemyScript : MonoBehaviour {
 			transform.LookAt (target.transform);
 		}
 	}
-
 	void Update () {
 		if(target == null){
 			target = Globals.end;
 		}
-
-		if(attacking == false){
-			if(slowed == false){
-				transform.Translate (Vector3.forward*moveSpeed / 50);
-			}
-			else {
-				transform.Translate (Vector3.forward*moveSpeed / 75);
-				slowTimer -= Time.deltaTime;
-				if(slowTimer <= 0){
-					slowed = false;
-				}
+		else{
+			dist = Vector3.Distance(target.transform.position, this.transform.position);
+			if(dist < 1){
+				targReach = true;
 			}
 		}
-		else {
-			//print(timer);
-			//attack animation
-			if(timer <= 0){
-				transform.Translate (Vector3.forward*moveSpeed / 50);
-				attacking = false;
-				timer = 0.25f;
-				transform.LookAt (target.transform);
+		if(targReach == false){
+			if(attacking == false){
+				if(slowed == false){
+					transform.Translate (Vector3.forward*moveSpeed / 50);
+				}
+				else {
+					transform.Translate (Vector3.forward*moveSpeed / 75);
+					slowTimer -= Time.deltaTime;
+					if(slowTimer <= 0){
+						slowed = false;
+					}
+				}
 			}
 			else {
-				transform.Translate (Vector3.back*moveSpeed / 100);
-				timer -= Time.deltaTime;
+				//print(timer);
+				//attack animation
+				if(timer <= 0){
+					transform.Translate (Vector3.forward*moveSpeed / 50);
+					attacking = false;
+					timer = 0.25f;
+					transform.LookAt (target.transform);
+				}
+				else {
+					transform.Translate (Vector3.back*moveSpeed / 100);
+					timer -= Time.deltaTime;
+				}
 			}
 		}
 	}

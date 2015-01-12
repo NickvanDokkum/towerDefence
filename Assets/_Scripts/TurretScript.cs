@@ -9,6 +9,8 @@ public class TurretScript : MonoBehaviour {
 	public GameObject myProjectile;
 	public float reloadTime = 0.1f;
 	public float reloadTimeReset = 1;
+	public float timeBetweenFires = 0.1f;
+	public uint rapidFireAmount = 2;
 	public Transform spawnPos;
 	
 	public Transform myTarget = null;
