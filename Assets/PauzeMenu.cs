@@ -3,29 +3,27 @@ using System.Collections;
 
 public class PauzeMenu : MonoBehaviour {
 
-	private Rect pauzePopup = new Rect(Screen.width/2 - 200,300,400,100);
-
-	// Use this for initialization
-	void Start () 
-	{
-	}
+	//private Rect pauzePopup = new Rect(Screen.width/2 - 200,300,400,100);
 	
-	// Update is called once per frame
 	void Update () 
 	{
+		print (Globals.paused);
 
 		if(Input.GetKeyUp(KeyCode.P) && !Globals.paused)
+		{
 			Globals.paused = true;
-		else if(Input.GetKeyUp(KeyCode.P) && Globals.paused)
-			Globals.paused = false;
-
-		if (Globals.paused)
 			Time.timeScale = 0;
-		else
+			gameObject.GetComponent<CanvasGroup>().alpha = 1f;
+		}
+		else if(Input.GetKeyUp(KeyCode.P) && Globals.paused)
+		{
+			Globals.paused = false;
 			Time.timeScale = 1;
+			gameObject.GetComponent<CanvasGroup>().alpha = 0f;
+		}
 	}
 
-	void OnGUI()
+	/*void OnGUI()
 	{
 		if(Globals.paused)
 		{
@@ -43,5 +41,5 @@ public class PauzeMenu : MonoBehaviour {
 		{
 			Application.LoadLevel(0);
 		}
-	}
+	}*/
 }

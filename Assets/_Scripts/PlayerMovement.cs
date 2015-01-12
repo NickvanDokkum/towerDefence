@@ -11,17 +11,24 @@ public class PlayerMovement : MonoBehaviour {
 	private float verticalRotation = 0;
 	private float upDownRange = 60.0f;
 
+	private float jumpSpeed = 160;
+	private bool isJumping;
 
 
 	void Update() 
 	{
+		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false) 
+		{
+			rigidbody.AddForce(Vector3.up * jumpSpeed * 20);
+			isJumping = true;
+		}
 
 		if (Input.GetKey(KeyCode.Escape) && Screen.lockCursor == true || Globals.paused)
 			Screen.lockCursor = false;
 		else if (!Globals.paused)
 			Screen.lockCursor = true;
 
-		print (Globals.paused);
+
 		if(!Globals.paused)
 		{
 		float rotHorizontal = Input.GetAxis ("Mouse X") * mouseSensivity;
@@ -46,5 +53,21 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		isJumping = false;
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		print (other);
+		if(other.gameObject.tag == "Gold")
+		{
+			print("coin hit");
+			Globals.Gold += 9 + Globals.waveNumber;
+			Destroy(other.gameObject);
+		}
 	}
 }

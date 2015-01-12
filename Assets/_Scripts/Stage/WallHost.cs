@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WallHost : MonoBehaviour {
 
@@ -8,19 +9,24 @@ public class WallHost : MonoBehaviour {
 	private bool _OnHover = false;
 	private int currentWallLevel = 0;
 	private int damages;
+	private bool BuildAble = true;
+	public List<int> wallYPos = new List<int>();
 
+	
 	// Use this for initialization
 	void Start () 
 	{
 		//Hoe zet je dit object in een leeg game object?
-		Transform trans = (Transform)Instantiate(walls[0], new Vector3(transform.position.x,0.55f,transform.position.z), transform.rotation);
+		Transform trans = (Transform)Instantiate (walls [0], new Vector3 (transform.position.x, 0.55f, transform.position.z), Quaternion.Euler(0,0,0));//transform.rotation);
 		trans.parent = transform;
+		currentWallLevel++;
 	}
 
 	//kijkt of de muis op het object is
 	void OnMouseEnter()
 	{
 		_OnHover = true;
+		Debug.Log ("hover");
 	}
 
 	void OnMouseExit()
@@ -33,21 +39,22 @@ public class WallHost : MonoBehaviour {
 	void Update () 
 	{
 		//kijkt of je een object kan upgraden
-		if (Input.GetKeyUp (KeyCode.B)) 
+		if (Input.GetKeyUp (KeyCode.U) && BuildAble) 
 		{
-			Debug.Log("test1");
+			Debug.Log("Buildable? " + BuildAble + walls.Length + currentWallLevel);
 			if (_OnHover)
 			{
-				Debug.Log("test2");
-				if(currentWallLevel < walls.Length)
+				if(currentWallLevel <= walls.Length)
 				{
-					if(GameObject.Find("Floor").GetComponent<FloorManager>().BuildMode)
+					if(Globals.BuildMode)
 					{
 						removeOldChild();
 
-						currentWallLevel++;
-						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,10f,transform.position.z), transform.rotation);
+						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,wallYPos[currentWallLevel],transform.position.z), Quaternion.Euler(90,0,0));
 						trans.parent = transform;
+
+						currentWallLevel++;
+						print(currentWallLevel);
 						if(currentWallLevel == 1){
 							HP = 3;
 						}
@@ -57,6 +64,10 @@ public class WallHost : MonoBehaviour {
 						else if (currentWallLevel == 3){
 							HP = 10;
 						}
+						if(currentWallLevel == walls.Length)
+						{
+							BuildAble = false;
+						}
 					}
 				}
 			}
@@ -65,7 +76,6 @@ public class WallHost : MonoBehaviour {
 	void OnCollisionStay(Collision hit){
 		if(hit.gameObject.GetComponent<fastEnemyScript>().attack == true){
 			if(hit.gameObject.tag == "Enemy2"){
-				print(hit.gameObject.GetComponent<fastEnemyScript>());
 				damages = 1;
 				damaged();
 			}
@@ -73,10 +83,7 @@ public class WallHost : MonoBehaviour {
 	}
 	void removeOldChild()
 	{
-		Transform trans = this.transform.GetChild(currentWallLevel);
-		trans.transform.parent = null;
-
-		Destroy ((trans as Transform).gameObject);
+		GameObject.Destroy (transform.GetChild (0).gameObject);
 	}
 	void damaged(){
 		if(currentWallLevel != 0){
@@ -92,6 +99,7 @@ public class WallHost : MonoBehaviour {
 			if (HP < 0){
 				removeOldChild();
 				currentWallLevel = 0;
+				BuildAble = true;
 
 			}
 			print(HP);
