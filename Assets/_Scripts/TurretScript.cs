@@ -25,7 +25,7 @@ public class TurretScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetKeyDown("space")){
+		if(Input.GetKeyDown("F")){
 			if(!Globals.focusTank){
 				Globals.focusTank = true;
 			}
