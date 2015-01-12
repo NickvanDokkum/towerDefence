@@ -12,13 +12,12 @@ public class EnemySpawnScript : MonoBehaviour {
 
 	void Start () {
 		spawnTimer = timeReset;
-		Instantiate (EnemyFast, this.transform.position, this.transform.rotation);
 	}
 
 	void Update () {
-		//if(spawnable == true) {
+		if(spawnable == true) {
 			if (spawnTimer < 0){
-				enemyNum = Random.Range(0, 2);
+				enemyNum = Random.Range(0, 1);
 				if(enemyNum == 1){
 					Instantiate (EnemyFast, this.transform.position, this.transform.rotation);
 				}
@@ -28,8 +27,8 @@ public class EnemySpawnScript : MonoBehaviour {
 				spawnTimer = timeReset;
 			}
 			else {
-				//spawnTimer -= Time.deltaTime;
+				spawnTimer -= Time.deltaTime;
 			}
-		//}
+		}
 	}
 }
