@@ -6,15 +6,17 @@ public class EnemySpawnScript : MonoBehaviour {
 	public GameObject EnemyFast;
 	public GameObject EnemyStrong;
 	private float spawnTimer;
-	public float timeReset = 3;
+	private float timeReset = 3;
 	private float enemyNum;
+	public bool spawnable = true;
 
 	void Start () {
 		spawnTimer = timeReset;
+		Instantiate (EnemyFast, this.transform.position, this.transform.rotation);
 	}
 
 	void Update () {
-		if(Globals.roundActive == true) {
+		//if(spawnable == true) {
 			if (spawnTimer < 0){
 				enemyNum = Random.Range(0, 2);
 				if(enemyNum == 1){
@@ -26,8 +28,8 @@ public class EnemySpawnScript : MonoBehaviour {
 				spawnTimer = timeReset;
 			}
 			else {
-				spawnTimer -= Time.deltaTime;
+				//spawnTimer -= Time.deltaTime;
 			}
-		}
+		//}
 	}
 }

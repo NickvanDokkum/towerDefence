@@ -12,11 +12,12 @@ public class fastEnemyScript : MonoBehaviour {
 	public bool attacking = false;
 	public bool attack = false;
 	private float slowTimer = 3;
-	public int moveSpeed = 4;
+	public float moveSpeed = 4;
 	private NavMeshAgent agent;
 	[SerializeField]
 	private GameObject target;
 	private bool repath = false;
+	private bool move = false;
 
 	void Start () {
 		if(target == null) {
@@ -48,7 +49,7 @@ public class fastEnemyScript : MonoBehaviour {
 			lastPos2 = lastPos;
 			lastPos = Vector3.Distance(target.transform.position, this.transform.position);
 			posMoved = lastPos - lastPos2;
-			if(attack == false){
+			if(attack == false && move == true){
 				if(posMoved < 0.001 && posMoved > -0.001){
 					agent.speed = 0;
 					attacking = true;
@@ -67,17 +68,14 @@ public class fastEnemyScript : MonoBehaviour {
 			}
 		}
 		if(attacking == true){
-			//print(timer);
 			if(timer <= 0){
-				//print("forward");
 				transform.LookAt (target.transform);
-				//transform.Translate (Vector3.forward*moveSpeed / 50);
 				if(timer < -0.125f){
 					timer = 0.25f;
 					attacking = false;
 					repath = true;
 					if(slowed == false){
-						agent.speed = 5;
+						agent.speed = 8;
 					}
 					else{
 						agent.speed = slowSpeed;
@@ -89,10 +87,26 @@ public class fastEnemyScript : MonoBehaviour {
 				}
 			}
 			else {
-				//print("backwards");
-				//transform.Translate (Vector3.back*moveSpeed / 100);
 				timer -= Time.deltaTime;
 			}
 		}
+		if(move == false){
+			attacking = false;
+		}
+	}
+	public void startMove (){
+		move = true;
+		print ("startMove");
+		if(slowed == false){
+			agent.speed = 8;
+		}
+		else{
+			agent.speed = slowSpeed;
+		}
+	}
+	public void stopMove(){
+		move = false;
+		print ("stopMove");
+		agent.speed = 0;
 	}
 }

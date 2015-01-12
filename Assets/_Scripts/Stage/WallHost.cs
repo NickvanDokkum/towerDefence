@@ -26,7 +26,6 @@ public class WallHost : MonoBehaviour {
 	void OnMouseEnter()
 	{
 		_OnHover = true;
-		Debug.Log ("hover");
 	}
 
 	void OnMouseExit()

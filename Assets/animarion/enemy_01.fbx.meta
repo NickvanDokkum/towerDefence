@@ -20,7 +20,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 0
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -31,7 +31,7 @@ ModelImporter:
       name: C4D Animation Take
       takeName: C4D Animation Take
       firstFrame: 0
-      lastFrame: 90
+      lastFrame: 45
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
