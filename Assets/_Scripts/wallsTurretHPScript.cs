@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class wallsTurretHPScript : MonoBehaviour {
 
 	private int HP;
 	private bool activeHP = false;
+	private List<Transform> enemies = new List<Transform>();
 
 	void Start () {
 		if(this.gameObject.tag == "Wall"){
@@ -17,18 +19,19 @@ public class wallsTurretHPScript : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(UnityEngine.Collision hit){
-		if (activeHP == true) {
-			if (hit.gameObject.tag == "Enemy2") {
-				HP -= 10;
-			} else if (hit.gameObject.tag == "Enemy1") {
-				HP -= 5;
-			}
-			if (HP <= 0) {
-				//do your thing here, koen
-				Destroy(this.gameObject);
-				Destroy(this);
-			}
+	void OnCollisionEnter(Collision hit){
+		//enemies.Add (hit.gameObject);
+	}
+
+	void OnCollisionStay(Collision hit){
+		if (hit.gameObject.tag == "Enemy2") {
+			HP -= 10;
+		}
+		else if (hit.gameObject.tag == "Enemy1") {
+			HP -= 5;
+		}
+		if (HP <= 0) {
+			Destroy(this.gameObject);
 		}
 	}
 }

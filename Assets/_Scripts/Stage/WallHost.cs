@@ -5,9 +5,10 @@ using System.Collections.Generic;
 public class WallHost : MonoBehaviour {
 
 	public Transform[] walls;
-
+	private int HP;
 	private bool _OnHover = false;
 	private int currentWallLevel = 0;
+	private int damages;
 	private bool BuildAble = true;
 	public List<int> wallYPos = new List<int>();
 
@@ -25,7 +26,6 @@ public class WallHost : MonoBehaviour {
 	void OnMouseEnter()
 	{
 		_OnHover = true;
-		Debug.Log ("hover");
 	}
 
 	void OnMouseExit()
@@ -51,9 +51,18 @@ public class WallHost : MonoBehaviour {
 
 						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,wallYPos[currentWallLevel],transform.position.z), Quaternion.Euler(90,0,0));
 						trans.parent = transform;
+
 						currentWallLevel++;
 						print(currentWallLevel);
-
+						if(currentWallLevel == 1){
+							HP = 3;
+						}
+						else if (currentWallLevel == 2){
+							HP = 5;
+						}
+						else if (currentWallLevel == 3){
+							HP = 10;
+						}
 						if(currentWallLevel == walls.Length)
 						{
 							BuildAble = false;
@@ -63,8 +72,36 @@ public class WallHost : MonoBehaviour {
 			}
 		}
 	}
+	void OnCollisionStay(Collision hit){
+		if(hit.gameObject.GetComponent<fastEnemyScript>().attack == true){
+			if(hit.gameObject.tag == "Enemy2"){
+				damages = 1;
+				damaged();
+			}
+		}
+	}
 	void removeOldChild()
 	{
 		GameObject.Destroy (transform.GetChild (0).gameObject);
+	}
+	void damaged(){
+		if(currentWallLevel != 0){
+			switch (damages)
+			{
+				case 1:
+					HP--;
+				break;
+				case 2:
+					HP-=2;
+				break;
+			}
+			if (HP < 0){
+				removeOldChild();
+				currentWallLevel = 0;
+				BuildAble = true;
+
+			}
+			print(HP);
+		}
 	}
 }
