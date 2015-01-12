@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WallHost : MonoBehaviour {
 
@@ -8,7 +9,9 @@ public class WallHost : MonoBehaviour {
 	private bool _OnHover = false;
 	private int currentWallLevel = 0;
 	private bool BuildAble = true;
+	public List<int> wallYPos = new List<int>();
 
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -46,12 +49,12 @@ public class WallHost : MonoBehaviour {
 					{
 						removeOldChild();
 
-						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,1f,transform.position.z), Quaternion.Euler(90,0,0));
+						Transform trans = (Transform)Instantiate(walls[currentWallLevel], new Vector3(transform.position.x,wallYPos[currentWallLevel],transform.position.z), Quaternion.Euler(90,0,0));
 						trans.parent = transform;
 						currentWallLevel++;
 						print(currentWallLevel);
 
-						if(currentWallLevel == 3)
+						if(currentWallLevel == walls.Length)
 						{
 							BuildAble = false;
 						}

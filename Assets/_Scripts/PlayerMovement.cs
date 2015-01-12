@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false) 
 		{
-			rigidbody.AddForce(Vector3.up * jumpSpeed * 2);
+			rigidbody.AddForce(Vector3.up * jumpSpeed * 20);
 			isJumping = true;
 		}
 
@@ -58,10 +58,16 @@ public class PlayerMovement : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 		isJumping = false;
+	}
 
-		if(collider.gameObject.tag == "Gold")
+	void OnTriggerEnter(Collider other)
+	{
+		print (other);
+		if(other.gameObject.tag == "Gold")
 		{
+			print("coin hit");
 			Globals.Gold += 9 + Globals.waveNumber;
+			Destroy(other.gameObject);
 		}
 	}
 }

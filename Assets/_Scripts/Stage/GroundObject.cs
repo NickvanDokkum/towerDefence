@@ -4,14 +4,25 @@ using System.Collections;
 public class GroundObject : MonoBehaviour {
 
 	private bool _Onhover = false;
-	private bool ObjectBuilded = false;
+	public bool ObjectBuilded = false;
 	
 	//public Transform Wall;
 	//public Transform[] turrets;
 	public Transform[] buildAbleObjects;
 	private int objectNumber;
 	public Material ground;
-	
+
+	void Start()
+	{
+		if(this.transform.position.x <= 150 && this.transform.position.x >= 90)
+		{
+			if(this.transform.position.z <= 150 && this.transform.position.z >= 90)
+			{
+				ObjectBuilded = true;
+			}
+		}
+	}
+
 
 	void Update()
 	{
@@ -25,7 +36,6 @@ public class GroundObject : MonoBehaviour {
 				{
 					objectNumber = 0;
 					placeObjectToBuild();
-					ObjectBuilded = true;
 					Globals.Gold -= 10;
 				}
 				
@@ -33,7 +43,6 @@ public class GroundObject : MonoBehaviour {
 				{
 					objectNumber = 1;
 					placeObjectToBuild();
-					ObjectBuilded = true;
 					Globals.Gold -= 25;
 				}
 				
@@ -41,7 +50,6 @@ public class GroundObject : MonoBehaviour {
 				{
 					objectNumber = 2;
 					placeObjectToBuild();
-					ObjectBuilded = true;
 					Globals.Gold -= 30;
 				}
 				
@@ -49,14 +57,12 @@ public class GroundObject : MonoBehaviour {
 				{
 					objectNumber = 3;
 					placeObjectToBuild();
-					ObjectBuilded = true;
 					Globals.Gold -= 50;
 				}
 				if (Input.GetKeyUp (KeyCode.Alpha5) && Globals.Gold >= 40) 
 				{
 					objectNumber = 4;
 					placeObjectToBuild();
-					ObjectBuilded = true;
 					Globals.Gold -= 40;
 				}
 			}
@@ -90,5 +96,6 @@ public class GroundObject : MonoBehaviour {
 		Debug.Log (Globals.Gold);
 		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0.5f,transform.position.z), transform.rotation);
 		trans.parent = transform;
+		ObjectBuilded = true;
 	}
 }
