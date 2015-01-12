@@ -13,14 +13,23 @@ public class PlayerMovement : MonoBehaviour {
 
 	private float jumpSpeed = 160;
 	private bool isJumping;
+	private bool doubleJump = false;
 
 
 	void Update() 
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && isJumping == false) 
+		if (Input.GetKeyUp(KeyCode.Space) && doubleJump == false) 
 		{
-			rigidbody.AddForce(Vector3.up * jumpSpeed * 20);
-			isJumping = true;
+			if(isJumping == true)
+			{
+				doubleJump = true;
+				rigidbody.AddForce(Vector3.up * jumpSpeed * 30);
+			}
+			if(isJumping == false)
+			{
+				isJumping = true;
+				rigidbody.AddForce(Vector3.up * jumpSpeed * 20);
+			}
 		}
 
 		if (Input.GetKey(KeyCode.Escape) && Screen.lockCursor == true || Globals.paused)
@@ -58,6 +67,7 @@ public class PlayerMovement : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 		isJumping = false;
+		doubleJump = false;
 	}
 
 	void OnTriggerEnter(Collider other)

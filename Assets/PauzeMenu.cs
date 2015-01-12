@@ -7,7 +7,6 @@ public class PauzeMenu : MonoBehaviour {
 	
 	void Update () 
 	{
-		print (Globals.paused);
 
 		if(Input.GetKeyUp(KeyCode.P) && !Globals.paused)
 		{
