@@ -16,4 +16,5 @@ public class Globals : MonoBehaviour
 	public static int BaseLives = 1000;
 	public static int PlayerLives = 100;
 	public static int FocusValue = 0;
+	public static int CurrentFocus = 1;
 }
