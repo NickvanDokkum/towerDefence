@@ -8,6 +8,7 @@ public class fastEnemyScript : MonoBehaviour {
 	public float slowSpeed = 2.5f;
 	private float lastPos;
 	private float lastPos2;
+	private float lastPos3;
 	private float posMoved;
 	public bool attacking = false;
 	public bool attack = false;
@@ -46,17 +47,20 @@ public class fastEnemyScript : MonoBehaviour {
 			}
 		}
 		else{
-			lastPos2 = lastPos;
-			lastPos = Vector3.Distance(target.transform.position, this.transform.position);
-			posMoved = lastPos - lastPos2;
-			if(attack == false && move == true){
-				if(posMoved < 0.001 && posMoved > -0.001){
-					agent.speed = 0;
-					attacking = true;
+			if(move == true){
+				lastPos3 = lastPos2;
+				lastPos2 = lastPos;
+				lastPos = Vector3.Distance(target.transform.position, this.transform.position);
+				posMoved = lastPos - lastPos3;
+				if(attack == false && move == true){
+					if(posMoved < 0.001 && posMoved > -0.001){
+						agent.speed = 0;
+						attacking = true;
+					}
 				}
-			}
-			else {
-				attack = false;
+				else {
+					attack = false;
+				}
 			}
 		}
 		if(slowed == true){
@@ -90,13 +94,10 @@ public class fastEnemyScript : MonoBehaviour {
 				timer -= Time.deltaTime;
 			}
 		}
-		if(move == false){
-			attacking = false;
-		}
+		print (attacking);
 	}
 	public void startMove (){
 		move = true;
-		print ("startMove");
 		if(slowed == false){
 			agent.speed = 8;
 		}
@@ -106,7 +107,6 @@ public class fastEnemyScript : MonoBehaviour {
 	}
 	public void stopMove(){
 		move = false;
-		print ("stopMove");
 		agent.speed = 0;
 	}
 }
