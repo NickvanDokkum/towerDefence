@@ -15,9 +15,12 @@ public class PlayerMovement : MonoBehaviour {
 	private bool isJumping;
 	private bool doubleJump = false;
 
+	public GameObject coin;
+
 
 	void Update() 
 	{
+		//Jumpings
 		if (Input.GetKeyUp(KeyCode.Space) && doubleJump == false) 
 		{
 			if(isJumping == true)
@@ -32,12 +35,13 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
+		//cursor lock
 		if (Input.GetKey(KeyCode.Escape) && Screen.lockCursor == true || Globals.paused)
 			Screen.lockCursor = false;
 		else if (!Globals.paused)
 			Screen.lockCursor = true;
 
-
+		//camer rotation
 		if(!Globals.paused)
 		{
 		float rotHorizontal = Input.GetAxis ("Mouse X") * mouseSensivity;
@@ -49,8 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 		Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0, 0);
 		}
 
-
-
+		//player movement
 		float translation = Input.GetAxis("Vertical") * speed;
 		float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
 
@@ -59,9 +62,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		transform.Translate(0, 0, translation);
 		transform.Rotate(0, rotation, 0);
-
-
-	
 	}
 
 	void OnCollisionEnter(Collision collision)

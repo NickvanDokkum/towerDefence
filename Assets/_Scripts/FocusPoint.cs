@@ -20,7 +20,6 @@ public class FocusPoint : MonoBehaviour {
 			Globals.CurrentFocus += 1;
 			if(Globals.CurrentFocus > 6)
 				Globals.CurrentFocus = 1;
-			Debug.Log(Globals.CurrentFocus);
 			moveScrollBar();
 		}
 		if(mouseScroll <= 0)
@@ -28,7 +27,6 @@ public class FocusPoint : MonoBehaviour {
 			Globals.CurrentFocus -= 1;
 			if(Globals.CurrentFocus < 1)
 				Globals.CurrentFocus = 6;
-			Debug.Log(Globals.CurrentFocus);
 			moveScrollBar();
 		}
 	}

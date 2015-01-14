@@ -4,7 +4,9 @@ using System.Collections;
 public class enemyHP : MonoBehaviour {
 
 	public int HP = 100;
-	
+	public GameObject coin;
+
+
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "BulletDamage")
 		{
@@ -24,7 +26,11 @@ public class enemyHP : MonoBehaviour {
 		}
 		if(HP <= 0) {
 			Globals.Score += 9 + Globals.waveNumber;
-			Globals.Gold += 9 + Globals.waveNumber;
+			int coinsTotal = Random.Range(1,3);
+			for(int i = 0; i < coinsTotal; i++)
+			{
+				Instantiate(coin, new Vector3(transform.position.x + Random.Range(-5,5),transform.position.y,transform.position.z + Random.Range(-5,5)),Quaternion.identity);
+			}
 			Destroy (gameObject);
 			Destroy(this);
 		}

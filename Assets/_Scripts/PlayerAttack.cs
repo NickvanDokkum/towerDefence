@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyUp(KeyCode.Z) && !animation.isPlaying)
+		if(Input.GetMouseButtonUp(0) && Globals.CurrentFocus == 1 && !animation.isPlaying)
 		{
 			animation.Play();
 		}
