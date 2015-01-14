@@ -21,13 +21,9 @@ public class fastEnemyScript : MonoBehaviour {
 	private bool move = false;
 
 	void Start () {
-		if(target == null) {
-			target = Globals.end;
-		}
+		target = Globals.end;
 		agent = GetComponent<NavMeshAgent> ();
-		if(target != null){
-			agent.SetDestination (target.transform.position);
-		}
+		agent.SetDestination (target.transform.position);
 	}
 	void OnTriggerEnter(Collider other){
 		if(other.collider.tag == "BulletSlow"){
@@ -40,27 +36,19 @@ public class fastEnemyScript : MonoBehaviour {
 		slowed = true;
 	}
 	void Update () {
-		if(target == null) {
-			target = Globals.end;
-			if(target != null){
-				agent.SetDestination (target.transform.position);
+		if(move == true){
+			lastPos3 = lastPos2;
+			lastPos2 = lastPos;
+			lastPos = Vector3.Distance(target.transform.position, this.transform.position);
+			posMoved = lastPos - lastPos3	;
+			if(attack == false && move == true){
+				if(posMoved < 0.001 && posMoved > -0.001){
+					agent.speed = 0;
+					attacking = true;
+				}
 			}
-		}
-		else{
-			if(move == true){
-				lastPos3 = lastPos2;
-				lastPos2 = lastPos;
-				lastPos = Vector3.Distance(target.transform.position, this.transform.position);
-				posMoved = lastPos - lastPos3;
-				if(attack == false && move == true){
-					if(posMoved < 0.001 && posMoved > -0.001){
-						agent.speed = 0;
-						attacking = true;
-					}
-				}
-				else {
-					attack = false;
-				}
+			else {
+				attack = false;
 			}
 		}
 		if(slowed == true){

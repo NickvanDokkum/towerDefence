@@ -20,12 +20,17 @@ public class TurretScript : MonoBehaviour {
 
 	private Quaternion desiredRotation;
 
-	void Awake () {
-		singleton = this;
+	public turret2Controller otherScript;
+
+	private float fire = 0;
+	private bool fired = true;
+
+	void Start () {
+		otherScript = GameObject.FindObjectOfType(typeof(turret2Controller)) as turret2Controller;
 	}
 
 	void Update () {
-		if(Input.GetKeyDown("F")){
+		if(Input.GetKeyDown("f")){
 			if(!Globals.focusTank){
 				Globals.focusTank = true;
 			}
@@ -105,7 +110,8 @@ public class TurretScript : MonoBehaviour {
 
 			if(reloadTime == 0 || reloadTime < 0)
 			{
-				FireProjectile (); 
+				fire = 2.31f;
+				fired = false;
 				reloadTime = reloadTimeReset;
 			}
 			else
@@ -113,7 +119,18 @@ public class TurretScript : MonoBehaviour {
 				reloadTime -= Time.deltaTime;
 			}
 		}
-
+		if(fired == false){
+			if(fire <= 0){
+				fired = true;
+				FireProjectile();
+			}
+			else{
+				if(fire == 2.31f){
+					otherScript.Shoot();
+				}
+				fire -= Time.deltaTime;
+			}
+		}
 		/*if (Globals.roundActive == false && collider.enabled == true) 
 			collider.enabled = false;
 		else if(Globals.roundActive == true && collider.enabled == false) 
@@ -150,7 +167,6 @@ public class TurretScript : MonoBehaviour {
 	
 	
 	void FireProjectile(){
-
 		Instantiate (myProjectile, spawnPos.transform.position, this.transform.rotation);
 	}
 }

@@ -10,14 +10,20 @@ public class frameChecker : MonoBehaviour {
 
 	void Start (){
 		otherScript = GameObject.FindObjectOfType(typeof(fastEnemyScript)) as fastEnemyScript;
+		List<AnimationState> animations = new List<AnimationState>();
+		foreach (AnimationState anim in gameObject.animation) 
+		{
+			animations.Add(anim);
+		}
+		print (animations.Count);
 	}
-
+	
 	void Update () {
 		time = animation["C4D Animation Take"].time;
 		if(time > 1.5){
 			animation["C4D Animation Take"].time = 0;
 		}
-		if(time >= 0.1 && time <= 1.167){
+		if(time >= 0.15 && time <= 1.167){
 			if(moving == false){
 				otherScript.startMove();
 				moving = true;

@@ -178,6 +178,7 @@ ModelImporter:
     4300044: Sphere
     7400000: C4D Animation Take
     9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -193,7 +194,137 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: C4D Animation Take
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cogwheel
+        weight: 1
+      - path: cogwheel/Lcogwheeloft_1
+        weight: 1
+      - path: cogwheel/Lcogwheeloft_1/Cap_1_3
+        weight: 1
+      - path: cogwheel/Lcogwheeloft_1/Cap_2_3
+        weight: 1
+      - path: cogwheel/Lcogwheeloft_1/Cogwheel
+        weight: 1
+      - path: cogwheel/Lcogwheeloft_1/Cogwheel_1
+        weight: 1
+      - path: cogwheel/Lcogwheeloft_1/Cogwheel_2
+        weight: 1
+      - path: marble_holder
+        weight: 1
+      - path: marble_holder/marble_holder_2
+        weight: 1
+      - path: marble_holder/marble_holder_2/Cube
+        weight: 1
+      - path: marble_holder/marble_holder_2/Cube/Cube_1_5
+        weight: 1
+      - path: marble_holder/marble_holder_2/Cube_2_3
+        weight: 1
+      - path: marble_holder/marble_holder_2/Cube_2_3/Cube_1_6
+        weight: 1
+      - path: non_animated
+        weight: 1
+      - path: non_animated/cap
+        weight: 1
+      - path: non_animated/cap/bottle_cap
+        weight: 1
+      - path: non_animated/carton
+        weight: 1
+      - path: non_animated/ice_sticks
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok/Loft_2
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok/Loft_2/Cap_1_2
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok/Loft_2/Cap_2_2
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok_2
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok_2/Loft_3
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok_2/Loft_3/ijstok_1
+        weight: 1
+      - path: non_animated/ice_sticks/ijstok_2/Loft_3/ijstok_3
+        weight: 1
+      - path: non_animated/ice_sticks_2
+        weight: 1
+      - path: non_animated/ice_sticks_2/Cube_1
+        weight: 1
+      - path: non_animated/ice_sticks_2/Cube_1_2
+        weight: 1
+      - path: non_animated/toilet_paper_roll
+        weight: 1
+      - path: non_animated/trekker
+        weight: 1
+      - path: non_animated/trekker/Boole
+        weight: 1
+      - path: non_animated/trekker/Boole/Cube_1_3
+        weight: 1
+      - path: non_animated/trekker/Boole/Cube_1_4
+        weight: 1
+      - path: non_animated/trekker/Boole/Cube_2
+        weight: 1
+      - path: non_animated/trekker/Boole/Cube_2_2
+        weight: 1
+      - path: non_animated/tuber_iron
+        weight: 1
+      - path: non_animated/tuber_iron/tube_iron
+        weight: 1
+      - path: non_animated/tuber_iron/tube_iron/Circle
+        weight: 1
+      - path: non_animated/tuber_iron/tube_iron/Circle_1
+        weight: 1
+      - path: non_animated/tuber_iron/tube_iron/Rounding_1
+        weight: 1
+      - path: non_animated/tuber_iron/tube_iron/Rounding_2
+        weight: 1
+      - path: non_animated/turret_holder
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: trigger
+        weight: 1
+      - path: trigger/Loft
+        weight: 1
+      - path: trigger/Loft/Cap_1
+        weight: 1
+      - path: trigger/Loft/Cap_2
+        weight: 1
+      - path: trigger/Loft/Spline
+        weight: 1
+      - path: trigger/Loft/Spline_1
+        weight: 1
+      - path: trigger_holder
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -229,6 +360,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
