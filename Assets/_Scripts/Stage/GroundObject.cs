@@ -14,9 +14,9 @@ public class GroundObject : MonoBehaviour {
 
 	void Start()
 	{
-		if(this.transform.position.x <= 150 && this.transform.position.x >= 90)
+		if(this.transform.position.x <= 160 && this.transform.position.x >= 90)
 		{
-			if(this.transform.position.z <= 150 && this.transform.position.z >= 90)
+			if(this.transform.position.z <= 160 && this.transform.position.z >= 80)
 			{
 				ObjectBuilded = true;
 			}
@@ -26,7 +26,16 @@ public class GroundObject : MonoBehaviour {
 
 	void Update()
 	{
-		if (_Onhover && ObjectBuilded == false) 
+		if(Input.GetMouseButtonUp(0))
+		{
+			if(Globals.CurrentFocus > 1)
+			{
+				objectNumber = Globals.CurrentFocus - 2;
+				Debug.Log(objectNumber + " / " + Globals.CurrentFocus);
+			}
+		}
+
+		/*if (_Onhover && ObjectBuilded == false) 
 		{
 			if(Globals.BuildMode)
 			{
@@ -66,18 +75,12 @@ public class GroundObject : MonoBehaviour {
 					Globals.Gold -= 40;
 				}
 			}
-		}
+		}*/
 	}
 
 
 	//checkt of de muis op een plane staat en maakt de acties die hierbij horen mogelijk
-	void OnMouseEnter()
-	{
-		if (Globals.BuildMode)
-			renderer.material.color = Color.blue;
 
-		_Onhover = true;
-	}
 
 	void OnMouseExit()
 	{
@@ -85,9 +88,13 @@ public class GroundObject : MonoBehaviour {
 		renderer.material = ground;
 
 		_Onhover = false;
-	}	
+	}
 
-
+	void OnMouseOver()
+	{
+		if(Globals.BuildMode && ObjectBuilded == false)
+			renderer.material.color = Color.blue;
+	}
 
 	// Functie voor het plaatsen van de objecten
 
