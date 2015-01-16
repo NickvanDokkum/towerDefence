@@ -20,5 +20,8 @@ public class UI : MonoBehaviour
 
 		Application.Quit();
 	}
-
+	public void dissable()
+	{
+		gameObject.SetActive (false);
+	}
 }
