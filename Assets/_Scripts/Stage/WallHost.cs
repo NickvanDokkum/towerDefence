@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class WallHost : MonoBehaviour {
 
 	public Transform[] walls;
-	private int HP;
 	private bool _OnHover = false;
 	private int currentWallLevel = 0;
 	private int damages;
@@ -17,7 +16,7 @@ public class WallHost : MonoBehaviour {
 	void Start () 
 	{
 		//Hoe zet je dit object in een leeg game object?
-		Transform trans = (Transform)Instantiate (walls [0], new Vector3 (transform.position.x, -0.5f, transform.position.z), Quaternion.Euler(0,0,0));//transform.rotation);
+		Transform trans = (Transform)Instantiate (walls [0], new Vector3 (transform.position.x + 5, -0.5f, transform.position.z), Quaternion.Euler(0,0,0));//transform.rotation);
 		trans.parent = transform;
 		currentWallLevel++;
 	}
@@ -54,16 +53,7 @@ public class WallHost : MonoBehaviour {
 
 						currentWallLevel++;
 						print(currentWallLevel);
-						if(currentWallLevel == 1){
-							HP = 3;
-						}
-						else if (currentWallLevel == 2){
-							HP = 5;
-						}
-						else if (currentWallLevel == 3){
-							HP = 10;
-						}
-						if(currentWallLevel == walls.Length)
+					if(currentWallLevel == walls.Length)
 						{
 							BuildAble = false;
 						}

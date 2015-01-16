@@ -29,9 +29,9 @@ public class GroundObject : MonoBehaviour {
 	{
 		if(Input.GetMouseButtonUp(0) && _Onhover == true)
 		{
-			if(Globals.CurrentFocus > 1)
+			if(Globals.CurrentFocus > 2)
 			{
-				objectNumber = Globals.CurrentFocus - 2;
+				objectNumber = Globals.CurrentFocus - 3;
 				Debug.Log(objectNumber + " / " + Globals.CurrentFocus);
 				placeObjectToBuild();
 			}
