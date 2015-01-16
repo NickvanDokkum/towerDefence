@@ -15,7 +15,6 @@ public class frameChecker : MonoBehaviour {
 		{
 			animations.Add(anim);
 		}
-		print (animations.Count);
 	}
 	
 	void Update () {

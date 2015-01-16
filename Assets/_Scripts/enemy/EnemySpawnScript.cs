@@ -16,6 +16,7 @@ public class EnemySpawnScript : MonoBehaviour {
 
 	void Update () {
 		if(spawnable == true) {
+			print(spawnable);
 			if (spawnTimer < 0){
 				enemyNum = Random.Range(0, 1);
 				if(enemyNum == 1){

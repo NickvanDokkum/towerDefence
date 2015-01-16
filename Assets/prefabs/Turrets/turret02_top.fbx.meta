@@ -1,0 +1,935 @@
+fileFormatVersion: 2
+guid: 66aa1c3d47e278341a39c1d2e6cc57d6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ammo
+    100002: ammo_box
+    100004: arrow
+    100006: arrow_2
+    100008: Bend
+    100010: Bend_2
+    100012: bullet
+    100014: bullet_1
+    100016: bullet_2
+    100018: bullet_3
+    100020: bullet_4
+    100022: bullet_5
+    100024: bullet_6
+    100026: bullet_7
+    100028: bullet_8
+    100030: bullets
+    100032: Cap_1
+    100034: Cap_1_2
+    100036: Cap_1_3
+    100038: Cap_1_4
+    100040: Cap_1_5
+    100042: Cap_1_6
+    100044: Cap_1_7
+    100046: Cap_1_8
+    100048: Capsule
+    100050: Circle
+    100052: Circle_1
+    100054: Circle_10
+    100056: Circle_11
+    100058: Circle_12
+    100060: Circle_13
+    100062: Circle_14
+    100064: Circle_15
+    100066: Circle_16
+    100068: Circle_17
+    100070: Circle_18
+    100072: Circle_19
+    100074: Circle_1_10
+    100076: Circle_1_11
+    100078: Circle_1_12
+    100080: Circle_1_13
+    100082: Circle_1_14
+    100084: Circle_1_15
+    100086: Circle_1_16
+    100088: Circle_1_17
+    100090: Circle_1_18
+    100092: Circle_1_19
+    100094: Circle_1_2
+    100096: Circle_1_20
+    100098: Circle_1_21
+    100100: Circle_1_22
+    100102: Circle_1_23
+    100104: Circle_1_24
+    100106: Circle_1_25
+    100108: Circle_1_26
+    100110: Circle_1_27
+    100112: Circle_1_28
+    100114: Circle_1_29
+    100116: Circle_1_3
+    100118: Circle_1_30
+    100120: Circle_1_31
+    100122: Circle_1_32
+    100124: Circle_1_33
+    100126: Circle_1_34
+    100128: Circle_1_35
+    100130: Circle_1_36
+    100132: Circle_1_37
+    100134: Circle_1_38
+    100136: Circle_1_39
+    100138: Circle_1_4
+    100140: Circle_1_40
+    100142: Circle_1_41
+    100144: Circle_1_42
+    100146: Circle_1_43
+    100148: Circle_1_44
+    100150: Circle_1_45
+    100152: Circle_1_46
+    100154: Circle_1_47
+    100156: Circle_1_48
+    100158: Circle_1_49
+    100160: Circle_1_5
+    100162: Circle_1_50
+    100164: Circle_1_51
+    100166: Circle_1_52
+    100168: Circle_1_53
+    100170: Circle_1_54
+    100172: Circle_1_6
+    100174: Circle_1_7
+    100176: Circle_1_8
+    100178: Circle_1_9
+    100180: Circle_2
+    100182: Circle_20
+    100184: Circle_21
+    100186: Circle_22
+    100188: Circle_23
+    100190: Circle_24
+    100192: Circle_25
+    100194: Circle_26
+    100196: Circle_27
+    100198: Circle_3
+    100200: Circle_4
+    100202: Circle_5
+    100204: Circle_6
+    100206: Circle_7
+    100208: Circle_8
+    100210: Circle_9
+    100212: compas
+    100214: crsoshair
+    100216: Cube
+    100218: Cube_1
+    100220: Cube_2
+    100222: Cube_3
+    100224: Cylinder
+    100226: Cylinder_0
+    100228: Cylinder_1
+    100230: Cylinder_2
+    100232: Cylinder_2_2
+    100234: Cylinder_3
+    100236: Cylinder_4
+    100238: Cylinder_5
+    100240: Cylinder_6
+    100242: Loft
+    100244: Loft_1
+    100246: Loft_1_2
+    100248: Loft_2
+    100250: loop
+    100252: Null
+    100254: Null_2
+    100256: oxygen_tank
+    100258: Polygon_Reduction
+    100260: Polygon_Reduction_2
+    100262: Rounding_1
+    100264: Rounding_1_2
+    100266: Rounding_1_3
+    100268: Rounding_1_4
+    100270: Rounding_1_5
+    100272: Rounding_1_6
+    100274: Rounding_1_7
+    100276: Rounding_1_8
+    100278: Rounding_2
+    100280: Rounding_2_2
+    100282: Rounding_2_3
+    100284: Rounding_2_4
+    100286: Rounding_2_5
+    100288: Rounding_2_6
+    100290: Rounding_2_7
+    100292: Rounding_2_8
+    100294: Spline
+    100296: Spline_1
+    100298: Spline_2
+    100300: sticky_tape
+    100302: sticky_tape_1
+    100304: sticky_tape_1_2
+    100306: sticky_tape_2
+    100308: straw
+    100310: straw_1
+    100312: straw_2
+    100314: straw_3
+    100316: straw_4
+    100318: straw_5
+    100320: straw_6
+    100322: straw_7
+    100324: straw_8
+    100326: straw_canon
+    100328: straw_loop
+    100330: //RootNode
+    400000: ammo
+    400002: ammo_box
+    400004: arrow
+    400006: arrow_2
+    400008: Bend
+    400010: Bend_2
+    400012: bullet
+    400014: bullet_1
+    400016: bullet_2
+    400018: bullet_3
+    400020: bullet_4
+    400022: bullet_5
+    400024: bullet_6
+    400026: bullet_7
+    400028: bullet_8
+    400030: bullets
+    400032: Cap_1
+    400034: Cap_1_2
+    400036: Cap_1_3
+    400038: Cap_1_4
+    400040: Cap_1_5
+    400042: Cap_1_6
+    400044: Cap_1_7
+    400046: Cap_1_8
+    400048: Capsule
+    400050: Circle
+    400052: Circle_1
+    400054: Circle_10
+    400056: Circle_11
+    400058: Circle_12
+    400060: Circle_13
+    400062: Circle_14
+    400064: Circle_15
+    400066: Circle_16
+    400068: Circle_17
+    400070: Circle_18
+    400072: Circle_19
+    400074: Circle_1_10
+    400076: Circle_1_11
+    400078: Circle_1_12
+    400080: Circle_1_13
+    400082: Circle_1_14
+    400084: Circle_1_15
+    400086: Circle_1_16
+    400088: Circle_1_17
+    400090: Circle_1_18
+    400092: Circle_1_19
+    400094: Circle_1_2
+    400096: Circle_1_20
+    400098: Circle_1_21
+    400100: Circle_1_22
+    400102: Circle_1_23
+    400104: Circle_1_24
+    400106: Circle_1_25
+    400108: Circle_1_26
+    400110: Circle_1_27
+    400112: Circle_1_28
+    400114: Circle_1_29
+    400116: Circle_1_3
+    400118: Circle_1_30
+    400120: Circle_1_31
+    400122: Circle_1_32
+    400124: Circle_1_33
+    400126: Circle_1_34
+    400128: Circle_1_35
+    400130: Circle_1_36
+    400132: Circle_1_37
+    400134: Circle_1_38
+    400136: Circle_1_39
+    400138: Circle_1_4
+    400140: Circle_1_40
+    400142: Circle_1_41
+    400144: Circle_1_42
+    400146: Circle_1_43
+    400148: Circle_1_44
+    400150: Circle_1_45
+    400152: Circle_1_46
+    400154: Circle_1_47
+    400156: Circle_1_48
+    400158: Circle_1_49
+    400160: Circle_1_5
+    400162: Circle_1_50
+    400164: Circle_1_51
+    400166: Circle_1_52
+    400168: Circle_1_53
+    400170: Circle_1_54
+    400172: Circle_1_6
+    400174: Circle_1_7
+    400176: Circle_1_8
+    400178: Circle_1_9
+    400180: Circle_2
+    400182: Circle_20
+    400184: Circle_21
+    400186: Circle_22
+    400188: Circle_23
+    400190: Circle_24
+    400192: Circle_25
+    400194: Circle_26
+    400196: Circle_27
+    400198: Circle_3
+    400200: Circle_4
+    400202: Circle_5
+    400204: Circle_6
+    400206: Circle_7
+    400208: Circle_8
+    400210: Circle_9
+    400212: compas
+    400214: crsoshair
+    400216: Cube
+    400218: Cube_1
+    400220: Cube_2
+    400222: Cube_3
+    400224: Cylinder
+    400226: Cylinder_0
+    400228: Cylinder_1
+    400230: Cylinder_2
+    400232: Cylinder_2_2
+    400234: Cylinder_3
+    400236: Cylinder_4
+    400238: Cylinder_5
+    400240: Cylinder_6
+    400242: Loft
+    400244: Loft_1
+    400246: Loft_1_2
+    400248: Loft_2
+    400250: loop
+    400252: Null
+    400254: Null_2
+    400256: oxygen_tank
+    400258: Polygon_Reduction
+    400260: Polygon_Reduction_2
+    400262: Rounding_1
+    400264: Rounding_1_2
+    400266: Rounding_1_3
+    400268: Rounding_1_4
+    400270: Rounding_1_5
+    400272: Rounding_1_6
+    400274: Rounding_1_7
+    400276: Rounding_1_8
+    400278: Rounding_2
+    400280: Rounding_2_2
+    400282: Rounding_2_3
+    400284: Rounding_2_4
+    400286: Rounding_2_5
+    400288: Rounding_2_6
+    400290: Rounding_2_7
+    400292: Rounding_2_8
+    400294: Spline
+    400296: Spline_1
+    400298: Spline_2
+    400300: sticky_tape
+    400302: sticky_tape_1
+    400304: sticky_tape_1_2
+    400306: sticky_tape_2
+    400308: straw
+    400310: straw_1
+    400312: straw_2
+    400314: straw_3
+    400316: straw_4
+    400318: straw_5
+    400320: straw_6
+    400322: straw_7
+    400324: straw_8
+    400326: straw_canon
+    400328: straw_loop
+    400330: //RootNode
+    2300000: ammo_box
+    2300002: arrow_2
+    2300004: bullet
+    2300006: bullet_1
+    2300008: bullet_2
+    2300010: bullet_3
+    2300012: bullet_4
+    2300014: bullet_5
+    2300016: bullet_6
+    2300018: bullet_7
+    2300020: bullet_8
+    2300022: Cap_1
+    2300024: Cap_1_2
+    2300026: Cap_1_3
+    2300028: Cap_1_4
+    2300030: Cap_1_5
+    2300032: Cap_1_6
+    2300034: Cap_1_7
+    2300036: Cap_1_8
+    2300038: Capsule
+    2300040: compas
+    2300042: Cube
+    2300044: Cube_1
+    2300046: Cube_2
+    2300048: Cube_3
+    2300050: Cylinder_0
+    2300052: Cylinder_1
+    2300054: Cylinder_2
+    2300056: Cylinder_2_2
+    2300058: Cylinder_3
+    2300060: Cylinder_4
+    2300062: Cylinder_5
+    2300064: Cylinder_6
+    2300066: Loft_1_2
+    2300068: Loft_2
+    2300070: Rounding_1
+    2300072: Rounding_1_2
+    2300074: Rounding_1_3
+    2300076: Rounding_1_4
+    2300078: Rounding_1_5
+    2300080: Rounding_1_6
+    2300082: Rounding_1_7
+    2300084: Rounding_1_8
+    2300086: Rounding_2
+    2300088: Rounding_2_2
+    2300090: Rounding_2_3
+    2300092: Rounding_2_4
+    2300094: Rounding_2_5
+    2300096: Rounding_2_6
+    2300098: Rounding_2_7
+    2300100: Rounding_2_8
+    2300102: sticky_tape_1_2
+    2300104: sticky_tape_2
+    2300106: straw_1
+    2300108: straw_2
+    2300110: straw_3
+    2300112: straw_4
+    2300114: straw_5
+    2300116: straw_6
+    2300118: straw_7
+    2300120: straw_8
+    3300000: ammo_box
+    3300002: arrow_2
+    3300004: bullet
+    3300006: bullet_1
+    3300008: bullet_2
+    3300010: bullet_3
+    3300012: bullet_4
+    3300014: bullet_5
+    3300016: bullet_6
+    3300018: bullet_7
+    3300020: bullet_8
+    3300022: Cap_1
+    3300024: Cap_1_2
+    3300026: Cap_1_3
+    3300028: Cap_1_4
+    3300030: Cap_1_5
+    3300032: Cap_1_6
+    3300034: Cap_1_7
+    3300036: Cap_1_8
+    3300038: Capsule
+    3300040: compas
+    3300042: Cube
+    3300044: Cube_1
+    3300046: Cube_2
+    3300048: Cube_3
+    3300050: Cylinder_0
+    3300052: Cylinder_1
+    3300054: Cylinder_2
+    3300056: Cylinder_2_2
+    3300058: Cylinder_3
+    3300060: Cylinder_4
+    3300062: Cylinder_5
+    3300064: Cylinder_6
+    3300066: Loft_1_2
+    3300068: Loft_2
+    3300070: Rounding_1
+    3300072: Rounding_1_2
+    3300074: Rounding_1_3
+    3300076: Rounding_1_4
+    3300078: Rounding_1_5
+    3300080: Rounding_1_6
+    3300082: Rounding_1_7
+    3300084: Rounding_1_8
+    3300086: Rounding_2
+    3300088: Rounding_2_2
+    3300090: Rounding_2_3
+    3300092: Rounding_2_4
+    3300094: Rounding_2_5
+    3300096: Rounding_2_6
+    3300098: Rounding_2_7
+    3300100: Rounding_2_8
+    3300102: sticky_tape_1_2
+    3300104: sticky_tape_2
+    3300106: straw_1
+    3300108: straw_2
+    3300110: straw_3
+    3300112: straw_4
+    3300114: straw_5
+    3300116: straw_6
+    3300118: straw_7
+    3300120: straw_8
+    4300000: Capsule
+    4300002: Cube
+    4300004: Loft_2
+    4300006: Loft_1_2
+    4300008: Cylinder_0
+    4300010: Cylinder_1
+    4300012: Cylinder_2
+    4300014: Cylinder_3
+    4300016: Cylinder_4
+    4300018: Cylinder_5
+    4300020: Cylinder_6
+    4300022: Cube_1
+    4300024: Cube_3
+    4300026: Cube_2
+    4300028: ammo_box
+    4300030: arrow_2
+    4300032: compas
+    4300034: Cylinder_2_2
+    4300036: sticky_tape_2
+    4300038: sticky_tape_1_2
+    4300040: bullet_1
+    4300042: bullet
+    4300044: bullet_2
+    4300046: bullet_3
+    4300048: bullet_4
+    4300050: bullet_5
+    4300052: bullet_6
+    4300054: bullet_7
+    4300056: bullet_8
+    4300058: straw_8
+    4300060: Rounding_1
+    4300062: Cap_1
+    4300064: Rounding_2
+    4300066: straw_7
+    4300068: Rounding_1_2
+    4300070: Cap_1_2
+    4300072: Rounding_2_2
+    4300074: straw_6
+    4300076: Rounding_1_3
+    4300078: Cap_1_3
+    4300080: Rounding_2_3
+    4300082: straw_5
+    4300084: Rounding_1_4
+    4300086: Cap_1_4
+    4300088: Rounding_2_4
+    4300090: straw_4
+    4300092: Rounding_1_5
+    4300094: Cap_1_5
+    4300096: Rounding_2_5
+    4300098: straw_3
+    4300100: Rounding_1_6
+    4300102: Cap_1_6
+    4300104: Rounding_2_6
+    4300106: straw_2
+    4300108: Rounding_1_7
+    4300110: Cap_1_7
+    4300112: Rounding_2_7
+    4300114: straw_1
+    4300116: Rounding_1_8
+    4300118: Cap_1_8
+    4300120: Rounding_2_8
+    7400000: C4D Animation Take
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: C4D Animation Take
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Null
+        weight: 1
+      - path: Null/Capsule
+        weight: 1
+      - path: Null/straw_canon
+        weight: 1
+      - path: Null/straw_canon/ammo
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_0
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_1
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_2
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_3
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_4
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_5
+        weight: 1
+      - path: Null/straw_canon/ammo/bullets/Cylinder_6
+        weight: 1
+      - path: Null/straw_canon/ammo/Cube_1
+        weight: 1
+      - path: Null/straw_canon/ammo/Cube_2
+        weight: 1
+      - path: Null/straw_canon/ammo/Cube_3
+        weight: 1
+      - path: Null/straw_canon/ammo_box
+        weight: 1
+      - path: Null/straw_canon/crsoshair
+        weight: 1
+      - path: Null/straw_canon/crsoshair/Loft
+        weight: 1
+      - path: Null/straw_canon/crsoshair/Loft/Loft_2
+        weight: 1
+      - path: Null/straw_canon/crsoshair/Loft/Spline
+        weight: 1
+      - path: Null/straw_canon/crsoshair/Loft/Spline/Loft_1
+        weight: 1
+      - path: Null/straw_canon/crsoshair/Loft/Spline/Loft_1/Loft_1_2
+        weight: 1
+      - path: Null/straw_canon/crsoshair/Loft/Spline/Loft_1/Spline_1
+        weight: 1
+      - path: Null/straw_canon/Cube
+        weight: 1
+      - path: Null/straw_canon/loop
+        weight: 1
+      - path: Null/straw_canon/loop/bullet
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_1
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_2
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_3
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_4
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_5
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_6
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_7
+        weight: 1
+      - path: Null/straw_canon/loop/bullet_8
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape/Bend
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape/Polygon_Reduction
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape/sticky_tape_2
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape_1
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape_1/Bend_2
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape_1/Polygon_Reduction_2
+        weight: 1
+      - path: Null/straw_canon/loop/Null_2/sticky_tape_1/sticky_tape_1_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_1_49
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_1_50
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_1_51
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_1_52
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_1_53
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_1_54
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_25
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_26
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw/Circle_27
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_1_43
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_1_44
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_1_45
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_1_46
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_1_47
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_1_48
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_22
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_23
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Circle_24
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Rounding_1_8
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Rounding_1_8/Cap_1_8
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_1/Rounding_2_8
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_1_37
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_1_38
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_1_39
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_1_40
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_1_41
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_1_42
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_19
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_20
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Circle_21
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Rounding_1_7
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Rounding_1_7/Cap_1_7
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_2/Rounding_2_7
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_1_31
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_1_32
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_1_33
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_1_34
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_1_35
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_1_36
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_16
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_17
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Circle_18
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Rounding_1_6
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Rounding_1_6/Cap_1_6
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_3/Rounding_2_6
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_1_25
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_1_26
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_1_27
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_1_28
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_1_29
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_1_30
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_13
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_14
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Circle_15
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Rounding_1_5
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Rounding_1_5/Cap_1_5
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_4/Rounding_2_5
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_1_19
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_1_20
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_1_21
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_1_22
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_1_23
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_1_24
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_10
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_11
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Circle_12
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Rounding_1_4
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Rounding_1_4/Cap_1_4
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_5/Rounding_2_4
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_1_13
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_1_14
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_1_15
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_1_16
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_1_17
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_1_18
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_7
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_8
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Circle_9
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Rounding_1_3
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Rounding_1_3/Cap_1_3
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_6/Rounding_2_3
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_1_7
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_1_8
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_1_9
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_1_10
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_1_11
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_1_12
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_4
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_5
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Circle_6
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Rounding_1_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Rounding_1_2/Cap_1_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_7/Rounding_2_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_1
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_1_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_1_3
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_1_4
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_1_5
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_1_6
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_2
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Circle_3
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Rounding_1
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Rounding_1/Cap_1
+        weight: 1
+      - path: Null/straw_canon/loop/straw_loop/straw_8/Rounding_2
+        weight: 1
+      - path: Null/straw_canon/oxygen_tank
+        weight: 1
+      - path: Null/straw_canon/oxygen_tank/arrow
+        weight: 1
+      - path: Null/straw_canon/oxygen_tank/arrow/arrow_2
+        weight: 1
+      - path: Null/straw_canon/oxygen_tank/arrow/Spline_2
+        weight: 1
+      - path: Null/straw_canon/oxygen_tank/compas
+        weight: 1
+      - path: Null/straw_canon/oxygen_tank/Cylinder_2_2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -7,10 +7,10 @@ public class TurretScript : MonoBehaviour {
 	public static TurretScript singleton;
 	
 	public GameObject myProjectile;
-	public float reloadTime = 0.1f;
-	public float reloadTimeReset = 1;
-	public float timeBetweenFires = 0.1f;
-	public uint rapidFireAmount = 2;
+	public float reloadTime = 3f;
+	public float reloadTimeReset = 3;
+	//public float timeBetweenFires = 0.1f;
+	//public uint rapidFireAmount = 2;
 	public Transform spawnPos;
 	
 	public Transform myTarget = null;
@@ -23,9 +23,11 @@ public class TurretScript : MonoBehaviour {
 	public turret2Controller otherScript;
 
 	private float fire = 0;
+	public float fireReset = 2.31f;
 	private bool fired = true;
 
 	void Start () {
+		fire = fireReset;
 		otherScript = GameObject.FindObjectOfType(typeof(turret2Controller)) as turret2Controller;
 	}
 
@@ -108,9 +110,8 @@ public class TurretScript : MonoBehaviour {
 		{
 			transform.LookAt(myTarget);   
 
-			if(reloadTime == 0 || reloadTime < 0)
+			if(reloadTime <= 0)
 			{
-				fire = 2.31f;
 				fired = false;
 				reloadTime = reloadTimeReset;
 			}
@@ -125,7 +126,7 @@ public class TurretScript : MonoBehaviour {
 				FireProjectile();
 			}
 			else{
-				if(fire == 2.31f){
+				if(fire == fireReset){
 					otherScript.Shoot();
 				}
 				fire -= Time.deltaTime;
@@ -167,6 +168,7 @@ public class TurretScript : MonoBehaviour {
 	
 	
 	void FireProjectile(){
-		Instantiate (myProjectile, spawnPos.transform.position, this.transform.rotation);
+		fire = fireReset;
+		Instantiate (myProjectile, spawnPos.transform.position, gameObject.transform.rotation);
 	}
 }

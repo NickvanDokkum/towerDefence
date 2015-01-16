@@ -82,7 +82,7 @@ public class fastEnemyScript : MonoBehaviour {
 				timer -= Time.deltaTime;
 			}
 		}
-		print (attacking);
+		//print (attacking);
 	}
 	public void startMove (){
 		move = true;
