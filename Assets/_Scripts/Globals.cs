@@ -18,4 +18,6 @@ public class Globals : MonoBehaviour
 	public static int FocusValue = 0;
 	public static int CurrentFocus = 1;
 	public static uint enemiesSpawned =0;
+	public static bool upgradeShow = false;
+	public static int price;
 }

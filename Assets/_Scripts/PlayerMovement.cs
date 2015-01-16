@@ -41,13 +41,13 @@ public class PlayerMovement : MonoBehaviour {
 		//camer rotation
 		if(!Globals.paused)
 		{
-		float rotHorizontal = Input.GetAxis ("Mouse X") * mouseSensivity;
-		transform.Rotate (0, rotHorizontal, 0);
-		
-		verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensivity;
-		verticalRotation = Mathf.Clamp (verticalRotation, -upDownRange, upDownRange);
+			float rotHorizontal = Input.GetAxis ("Mouse X") * mouseSensivity;
+			transform.Rotate (0, rotHorizontal, 0);
+			
+			verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensivity;
+			verticalRotation = Mathf.Clamp (verticalRotation, -upDownRange, upDownRange);
 
-		Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0, 0);
+			Camera.main.transform.localRotation = Quaternion.Euler (verticalRotation, 0, 0);
 		}
 
 		//player movement

@@ -29,9 +29,9 @@ public class GroundObject : MonoBehaviour {
 	{
 		if(Input.GetMouseButtonUp(0) && _Onhover == true)
 		{
-			if(Globals.CurrentFocus > 1)
+			if(Globals.CurrentFocus > 2)
 			{
-				objectNumber = Globals.CurrentFocus - 2;
+				objectNumber = Globals.CurrentFocus - 3;
 				Debug.Log(objectNumber + " / " + Globals.CurrentFocus);
 				placeObjectToBuild();
 			}
@@ -104,9 +104,12 @@ public class GroundObject : MonoBehaviour {
 
 	void placeObjectToBuild()
 	{
-		Debug.Log (Globals.Gold);
-		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
-		trans.parent = transform;
-		ObjectBuilded = true;
+		if(Globals.Gold >= 100)
+		{
+			Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
+			trans.parent = transform;
+			ObjectBuilded = true;
+			Globals.Gold -= 100;
+		}
 	}
 }
