@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class turretHPScript : MonoBehaviour {
-
+	
+	public TurretScript otherScript;
 	private int HP;
 	private bool activeHP = false;
 
 	void Start () {
-		if(this.gameObject.tag == "turret"){
+		if(this.gameObject.tag == "Turret"){
 			HP = 10;
-			activeHP = true;
+			otherScript = GameObject.FindObjectOfType(typeof(TurretScript)) as TurretScript;
 		}
 	}
 

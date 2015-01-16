@@ -40,6 +40,11 @@ public class fastEnemyScript : MonoBehaviour {
 		slowed = true;
 	}
 	void Update () {
+		if(lastPos < 5){
+			Globals.BaseLives -= 50;
+			Destroy(gameObject);
+			Destroy(this);
+		}
 		if(dead == false){
 			if(move == true){
 				lastPos3 = lastPos2;

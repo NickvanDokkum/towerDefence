@@ -17,21 +17,27 @@ public class frameChecker : MonoBehaviour {
 		if (other.gameObject.tag == "BulletDamage")
 		{
 			HP -= 50;
+			Destroy(other.gameObject);
 		}
 		else if (other.gameObject.tag == "BulletFast")
 		{
 			HP -= 10;
+			Destroy(other.gameObject);
 		}
 		else if (other.gameObject.tag == "BulletNorm")
 		{
 			HP -= 25;
+			Destroy(other.gameObject);
 		}
 		else if (other.gameObject.tag == "BulletSlow")
 		{
 			HP -= 15;
+			Destroy(other.gameObject);
 		}
 		if(HP <= 0) {
 			Globals.Score += 9 + Globals.waveNumber;
+			dieing = true;
+			Dieing();
 		}
 	}
 
@@ -42,6 +48,7 @@ public class frameChecker : MonoBehaviour {
 	void Update () {
 		if(dieing == true){
 			timer = animation["enemy_death"].time;
+			print(timer);
 			if(timer >= animation["enemy_death"].length){
 				int coinsTotal = Random.Range(0,4);
 				for(int i = 0; i < coinsTotal; i++)
