@@ -24,6 +24,7 @@ public class fastEnemyScript : MonoBehaviour {
 		target = Globals.end;
 		agent = GetComponent<NavMeshAgent> ();
 		agent.SetDestination (target.transform.position);
+		repath = true;
 	}
 	void OnTriggerEnter(Collider other){
 		if(other.collider.tag == "BulletSlow"){
@@ -65,7 +66,6 @@ public class fastEnemyScript : MonoBehaviour {
 				if(timer < -0.125f){
 					timer = 0.25f;
 					attacking = false;
-					repath = true;
 					if(slowed == false){
 						agent.speed = 8;
 					}
