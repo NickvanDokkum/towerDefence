@@ -12,6 +12,7 @@ public class GroundObject : MonoBehaviour {
 	private int objectNumber;
 	public Material ground;
 
+
 	void Start()
 	{
 		if(this.transform.position.x <= 160 && this.transform.position.x >= 90)
@@ -26,12 +27,13 @@ public class GroundObject : MonoBehaviour {
 
 	void Update()
 	{
-		if(Input.GetMouseButtonUp(0))
+		if(Input.GetMouseButtonUp(0) && _Onhover == true)
 		{
 			if(Globals.CurrentFocus > 1)
 			{
 				objectNumber = Globals.CurrentFocus - 2;
 				Debug.Log(objectNumber + " / " + Globals.CurrentFocus);
+				placeObjectToBuild();
 			}
 		}
 
@@ -81,7 +83,6 @@ public class GroundObject : MonoBehaviour {
 
 	//checkt of de muis op een plane staat en maakt de acties die hierbij horen mogelijk
 
-
 	void OnMouseExit()
 	{
 		// turn the things of on mouse enter off
@@ -93,7 +94,10 @@ public class GroundObject : MonoBehaviour {
 	void OnMouseOver()
 	{
 		if(Globals.BuildMode && ObjectBuilded == false)
+		{
 			renderer.material.color = Color.blue;
+			_Onhover = true;
+		}
 	}
 
 	// Functie voor het plaatsen van de objecten
@@ -101,7 +105,7 @@ public class GroundObject : MonoBehaviour {
 	void placeObjectToBuild()
 	{
 		Debug.Log (Globals.Gold);
-		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0.5f,transform.position.z), transform.rotation);
+		Transform trans = (Transform)Instantiate(buildAbleObjects[objectNumber], new Vector3(transform.position.x,0f,transform.position.z), transform.rotation);
 		trans.parent = transform;
 		ObjectBuilded = true;
 	}

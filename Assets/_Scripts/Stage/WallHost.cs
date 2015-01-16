@@ -10,14 +10,14 @@ public class WallHost : MonoBehaviour {
 	private int currentWallLevel = 0;
 	private int damages;
 	private bool BuildAble = true;
+
 	public List<int> wallYPos = new List<int>();
 
-	
 	// Use this for initialization
 	void Start () 
 	{
 		//Hoe zet je dit object in een leeg game object?
-		Transform trans = (Transform)Instantiate (walls [0], new Vector3 (transform.position.x, 0.55f, transform.position.z), Quaternion.Euler(0,0,0));//transform.rotation);
+		Transform trans = (Transform)Instantiate (walls [0], new Vector3 (transform.position.x, -0.5f, transform.position.z), Quaternion.Euler(0,0,0));//transform.rotation);
 		trans.parent = transform;
 		currentWallLevel++;
 	}
@@ -72,36 +72,8 @@ public class WallHost : MonoBehaviour {
 			}
 		}
 	}
-	void OnCollisionStay(Collision hit){
-		if(hit.gameObject.GetComponent<fastEnemyScript>().attack == true){
-			if(hit.gameObject.tag == "Enemy2"){
-				damages = 1;
-				damaged();
-			}
-		}
-	}
 	void removeOldChild()
 	{
 		GameObject.Destroy (transform.GetChild (0).gameObject);
-	}
-	void damaged(){
-		if(currentWallLevel != 0){
-			switch (damages)
-			{
-				case 1:
-					HP--;
-				break;
-				case 2:
-					HP-=2;
-				break;
-			}
-			if (HP < 0){
-				removeOldChild();
-				currentWallLevel = 0;
-				BuildAble = true;
-
-			}
-			print(HP);
-		}
 	}
 }

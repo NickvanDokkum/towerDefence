@@ -15,9 +15,6 @@ public class PlayerMovement : MonoBehaviour {
 	private bool isJumping;
 	private bool doubleJump = false;
 
-	public GameObject coin;
-
-
 	void Update() 
 	{
 		//Jumpings
