@@ -19,8 +19,11 @@ public class fastEnemyScript : MonoBehaviour {
 	private GameObject target;
 	private bool repath = false;
 	private bool move = false;
+	public frameChecker otherScript;
+	private bool dead = false;
 
 	void Start () {
+		otherScript = GameObject.FindObjectOfType(typeof(frameChecker)) as frameChecker;
 		target = Globals.end;
 		agent = GetComponent<NavMeshAgent> ();
 		agent.SetDestination (target.transform.position);
@@ -37,57 +40,62 @@ public class fastEnemyScript : MonoBehaviour {
 		slowed = true;
 	}
 	void Update () {
-		if(move == true){
-			lastPos3 = lastPos2;
-			lastPos2 = lastPos;
-			lastPos = Vector3.Distance(target.transform.position, this.transform.position);
-			posMoved = lastPos - lastPos3	;
-			if(attack == false && move == true){
-				if(posMoved < 0.001 && posMoved > -0.001){
-					agent.speed = 0;
-					attacking = true;
+		if(dead == false){
+			if(move == true){
+				lastPos3 = lastPos2;
+				lastPos2 = lastPos;
+				var vectorToTarget = target.transform.position - transform.position;
+				vectorToTarget.y = 0;
+				lastPos = vectorToTarget.magnitude;
+				posMoved = lastPos - lastPos3;
+				if(attack == false && move == true){
+					if(posMoved < 0.001 && posMoved > -0.001){
+						agent.speed = 0;
+						attacking = true;
+						otherScript.Attacking();
+					}
+				}
+				else {
+					attack = false;
 				}
 			}
-			else {
-				attack = false;
+			if(slowed == true){
+				if(slowTimer <= 0){
+					agent.speed = 5;
+				}
+				else {
+					slowTimer -= Time.deltaTime;
+				}
 			}
-		}
-		if(slowed == true){
-			if(slowTimer <= 0){
-				agent.speed = 5;
-			}
-			else {
-				slowTimer -= Time.deltaTime;
-			}
-		}
-		if(attacking == true){
-			if(timer <= 0){
-				transform.LookAt (target.transform);
-				if(timer < -0.125f){
-					timer = 0.25f;
-					attacking = false;
-					if(slowed == false){
-						agent.speed = 8;
+			if(attacking == true){
+				if(timer <= 0){
+					transform.LookAt (target.transform);
+					if(timer < -0.125f){
+						timer = 0.25f;
+						attacking = false;
+						otherScript.Walking();
+						if(slowed == false){
+							agent.speed = 5;
+						}
+						else{
+							agent.speed = slowSpeed;
+						}
+						attack = true;
 					}
 					else{
-						agent.speed = slowSpeed;
+						timer -= Time.deltaTime;
 					}
-					attack = true;
 				}
-				else{
+				else {
 					timer -= Time.deltaTime;
 				}
 			}
-			else {
-				timer -= Time.deltaTime;
-			}
 		}
-		//print (attacking);
 	}
 	public void startMove (){
 		move = true;
 		if(slowed == false){
-			agent.speed = 8;
+			agent.speed = 5;
 		}
 		else{
 			agent.speed = slowSpeed;
@@ -95,6 +103,10 @@ public class fastEnemyScript : MonoBehaviour {
 	}
 	public void stopMove(){
 		move = false;
+		agent.speed = 0;
+	}
+	public void death(){
+		dead = true;
 		agent.speed = 0;
 	}
 }
