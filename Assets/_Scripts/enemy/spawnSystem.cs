@@ -7,7 +7,7 @@ public class spawnSystem : MonoBehaviour {
 	private EnemySpawnScript spawnScript;
 	public GameObject[] spawnPoints;
 	private float timer = 30;
-	public float resetTimer = 90;
+	public float resetTimer = 150;
 	private bool buildtime = true;
 
 	void Start () {
@@ -17,7 +17,6 @@ public class spawnSystem : MonoBehaviour {
 		if(timer <= 30 && buildtime == false){
 			Globals.BuildMode = true;
 			buildtime = true;
-			spawnScript.spawnable = false;
 		}
 		else if(timer <= 0){
 			timer = resetTimer;

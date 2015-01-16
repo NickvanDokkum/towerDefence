@@ -6,7 +6,7 @@ public class EnemySpawnScript : MonoBehaviour {
 	public GameObject EnemyFast;
 	public GameObject EnemyStrong;
 	private float spawnTimer;
-	private float timeReset = 3;
+	private float timeReset = 2;
 	private float enemyNum;
 	public bool spawnable = true;
 
@@ -26,6 +26,10 @@ public class EnemySpawnScript : MonoBehaviour {
 					Instantiate (EnemyStrong, this.transform.position, this.transform.rotation);
 				}
 				spawnTimer = timeReset;
+				Globals.enemiesSpawned ++;
+				if(Globals.enemiesSpawned == 30){
+					spawnable = false;
+				}
 			}
 			else {
 				spawnTimer -= Time.deltaTime;
