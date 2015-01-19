@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class ProjectileScript : MonoBehaviour {
-	private float mySpeed = 1.3f;
-	private float myRange = 5.0f;
+	private float mySpeed = 1.5f;
+	private float myRange = 3.0f;
 	
 	private float myDist;
 

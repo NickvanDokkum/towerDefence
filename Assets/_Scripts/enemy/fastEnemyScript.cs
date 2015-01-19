@@ -55,6 +55,10 @@ public class fastEnemyScript : MonoBehaviour {
 				posMoved = lastPos - lastPos3;
 				if(attack == false && move == true){
 					if(posMoved < 0.001 && posMoved > -0.001){
+						if(lastPos <= 1 && lastPos >= -1){
+							Destroy(this.gameObject);
+							Destroy(this);
+						}
 						agent.speed = 0;
 						attacking = true;
 						otherScript.Attacking();

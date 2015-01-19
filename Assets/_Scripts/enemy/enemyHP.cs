@@ -11,18 +11,26 @@ public class enemyHP : MonoBehaviour {
 		if (other.gameObject.tag == "BulletDamage")
 		{
 			HP -= 50;
+			Destroy(other.gameObject);
+			Destroy(other);
 		}
 		else if (other.gameObject.tag == "BulletFast")
 		{
 			HP -= 10;
+			Destroy(other.gameObject);
+			Destroy(other);
 		}
 		else if (other.gameObject.tag == "BulletNorm")
 		{
 			HP -= 25;
+			Destroy(other.gameObject);
+			Destroy(other);
 		}
 		else if (other.gameObject.tag == "BulletSlow")
 		{
 			HP -= 15;
+			Destroy(other.gameObject);
+			Destroy(other);
 		}
 		if(HP <= 0) {
 			Globals.Score += 9 + Globals.waveNumber;
